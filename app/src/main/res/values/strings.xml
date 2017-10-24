@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RobotAndroid</string>
+    <string name="station_welcome">xx站欢迎您</string>
+    <string name="name_train_num">车次</string>
+    <string name="train_state_name">状态：</string>
+    <string name="train_station_name">站台：</string>
+    <string name="train_from_time">发车时间：</string>
+    <string name="train_reminder_time">停靠时间：</string>
+    <string name="choose_train_num">选择车厢号</string>
+    <string name="name_trainNum">车次信息</string>
+    <string name="name_startendTime">发/到时间</string>
+    <string name="name_startendStation">发/到站</string>
+</resources>

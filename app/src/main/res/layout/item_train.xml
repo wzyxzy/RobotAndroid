@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/activity_main_right_item"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/name_train_num"
+        style="@style/AppTextViewItem"
+        android:layout_weight="3"
+        android:text="@string/name_trainNum" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="@dimen/activity_main_right_item"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/name_startendTime"
+        style="@style/AppTextViewItem"
+        android:layout_weight="5"
+        android:text="@string/name_startendTime" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="@dimen/activity_main_right_item"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/name_startendStation"
+        style="@style/AppTextViewItem"
+        android:layout_weight="4"
+        android:text="@string/name_startendStation" />
+</LinearLayout>

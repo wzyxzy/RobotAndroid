@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_main_padding">60dp</dimen>
+    <dimen name="activity_main_left_bottom_margin">20dp</dimen>
+    <dimen name="activity_main_right_item">50dp</dimen>
+    <dimen name="activity_main_text_size">36sp</dimen>
+    <dimen name="activity_item_text_size">28sp</dimen>
+    <dimen name="activity_main_text_size_large">40sp</dimen>
+</resources>
