@@ -1,11 +1,13 @@
 package com.zgty.robotandroid.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,11 +19,12 @@ import com.zgty.robotandroid.beans.RobotEntity;
 import com.zgty.robotandroid.beans.RobotManageEntity;
 import com.zgty.robotandroid.beans.TrainInfoEntity;
 import com.zgty.robotandroid.beans.TrainTimeEntity;
-import com.zgty.robotandroid.beans.TrainTimeList;
+import com.zgty.robotandroid.common.Constant;
 import com.zgty.robotandroid.presenter.TrainInfoPresenter;
 import com.zgty.robotandroid.presenter.TrainInfoPresenterImpl;
 import com.zgty.robotandroid.presenter.TrainTimePresenter;
 import com.zgty.robotandroid.presenter.TrainTimePresenterImpl;
+import com.zgty.robotandroid.service.RefreshService;
 import com.zgty.robotandroid.util.ToastUtil;
 
 import java.util.ArrayList;
@@ -30,18 +33,19 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, TrainInfoView, TrainTimeView {
 
-    private TextView station_welcome_text;
-    private TextView train_num_id;
-    private TextView train_station_from;
-    private TextView train_station_to;
-    private TextView pre_station_text;
-    private TextView after_station_text;
-    private TextView station_state;
-    private TextView train_station_num;
-    private TextView train_from_time;
-    private TextView train_reminder_time;
-    private TextView choose_train_num;
-    private ListView train_list_all;
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private TextView station_welcome_text;//xx站欢迎您，如果需要改，可以使用string，也可以写个setText
+    private TextView train_num_id;//列车车次
+    private TextView train_station_from;//始发站
+    private TextView train_station_to;//终点站
+    private TextView pre_station_text;//1--8车厢向前
+    private TextView after_station_text;//9--16车厢向后
+    private TextView station_state;//晚点等信息提示
+    private TextView train_station_num;//当前的车厢号
+    private TextView train_from_time;//列车到达时间
+    private TextView train_reminder_time;//列车停留时间
+    private TextView choose_train_num;//选择车厢号按钮
+    private ListView train_list_all;//右边的车次列表
 
     private TrainInfoPresenter trainInfoPresenter;
     private TrainTimePresenter trainTimePresenter;
@@ -53,16 +57,56 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TrainTimeAdapter trainTimeAdapter;
     private List<TrainTimeEntity> trainTimeEntities;
 
+    private RefreshListBroadCast listBroadCast;
+    private Intent intentRefreshService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initScreen();
+        initView();
+        initData();
+
+    }
+
+    private void initScreen() {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置全屏
-        setContentView(R.layout.activity_main);
         if (getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//设置横屏
         }
-        initView();
+    }
+
+    private void initData() {
+        trainTimeEntities = new ArrayList<>();
+        trainTimeAdapter = new TrainTimeAdapter(trainTimeEntities, this, R.layout.item_train);
+        train_list_all.setAdapter(trainTimeAdapter);
+        choose_train_num.setOnClickListener(this);
+
+        trainInfoPresenter = new TrainInfoPresenterImpl(this);
+        trainInfoPresenter.getTrainInfo(Constant.NOW_STATION);
+        trainTimePresenter = new TrainTimePresenterImpl(this);
+        trainTimePresenter.getTrainTime(Constant.BEGIN_TRAIN_NUM);
+
+        train_list_all.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Constant.NOW_STATION = trainTimeEntities.get(position).getTrainNum();
+                trainInfoPresenter.getTrainInfo(Constant.NOW_STATION);
+            }
+        });
+
+        intentRefreshService = new Intent();
+        intentRefreshService.setClass(this, RefreshService.class);
+        intentRefreshService.putExtra(Constant.SERVICE_INTENT_INFO, Constant.SERVICE_INFO);
+        intentRefreshService.putExtra(Constant.SERVICE_INTENT_LIST, Constant.SERVICE_LIST);
+        startService(intentRefreshService);
+        listBroadCast = new RefreshListBroadCast();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Constant.BROADCASTACTIONLIST);
+        filter.addAction(Constant.BROADCASTACTIONINFO);
+        registerReceiver(listBroadCast, filter);
 
     }
 
@@ -79,31 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         train_reminder_time = (TextView) findViewById(R.id.train_reminder_time);
         choose_train_num = (TextView) findViewById(R.id.choose_train_num);
         train_list_all = (ListView) findViewById(R.id.train_list_all);
-        trainTimeEntities = new ArrayList<>();
-        trainTimeAdapter = new TrainTimeAdapter(trainTimeEntities, this, R.layout.item_train);
-        train_list_all.setAdapter(trainTimeAdapter);
-//        LayoutInflater inflater = getLayoutInflater();
-//        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.item_train, train_list_all, false);
-//        train_list_all.addHeaderView(header, null, false);
-//        View header = getLayoutInflater().inflate(R.layout.item_train, null);
-//        train_list_all.addHeaderView(header);
-        choose_train_num.setOnClickListener(this);
 
-        trainInfoPresenter = new TrainInfoPresenterImpl(this);
-        trainInfoPresenter.getTrainInfo("8");
-        trainTimePresenter = new TrainTimePresenterImpl(this);
-        trainTimePresenter.getTrainTime("T123");
-
-        train_list_all.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                ToastUtil.ShowShort(getApplicationContext(), position + "");
-//                train_list_all.setSelection(position);
-//                train_list_all.setFocusable(true);
-//                train_list_all.setItemChecked(position, false);
-//                train_list_all.setSelector();
-            }
-        });
 
     }
 
@@ -118,6 +138,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onPause() {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//软件在后台屏幕不需要常亮
         super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (intentRefreshService != null) {
+            stopService(intentRefreshService);
+            intentRefreshService = null;
+        }
+        if (listBroadCast != null) {
+            unregisterReceiver(listBroadCast);
+            listBroadCast = null;
+        }
+        super.onDestroy();
+
     }
 
     @Override
@@ -175,6 +209,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else {
             ToastUtil.ShowShort(this, "获取数据出错");
+        }
+    }
+
+    public class RefreshListBroadCast extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            switch (intent.getAction()) {
+                case Constant.BROADCASTACTIONINFO:
+                    trainInfoPresenter.getTrainInfo(Constant.NOW_STATION);
+                    break;
+                case Constant.BROADCASTACTIONLIST:
+                    trainTimePresenter.getTrainTime(Constant.BEGIN_TRAIN_NUM);
+                    break;
+            }
         }
     }
 }

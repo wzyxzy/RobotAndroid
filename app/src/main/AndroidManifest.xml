@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 读取手机状态以获取设备号 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".common.RobotApplication"
         android:allowBackup="true"
@@ -33,6 +34,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".service.RefreshService"
+            android:enabled="true"
+            android:exported="true" />
+
     </application>
 
 </manifest>
