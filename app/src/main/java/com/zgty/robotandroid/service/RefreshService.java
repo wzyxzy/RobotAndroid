@@ -14,6 +14,7 @@ import java.util.TimerTask;
 
 /**
  * Created by zy on 2017/10/25.
+ * 定时刷新页面服务
  */
 
 public class RefreshService extends Service {

@@ -12,6 +12,7 @@ public class Constant {
     public static final int BROADCASTINFOTIME = 10000;//刷新info频率
     public static final String SERVICE_INTENT_INFO = "SERVICE_INTENT_INFO";//传递service名字
     public static final String SERVICE_INTENT_LIST = "SERVICE_INTENT_LIST";//传递service名字
+    public static String CHOOSE_USER_NUM_ID = "NO1";//选择车厢号
     public static final int SERVICE_INFO = 1004;//传递类型为info
     public static final int SERVICE_LIST = 1002;//传递类型为list
     public static String NOW_STATION = "8";//当前站台

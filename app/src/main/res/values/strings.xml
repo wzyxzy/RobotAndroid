@@ -10,4 +10,6 @@
     <string name="name_trainNum">车次信息</string>
     <string name="name_startendTime">发/到时间</string>
     <string name="name_startendStation">发/到站</string>
+    <string name="choose_train_no">请选择车厢号</string>
+    <string name="choose_train_back">返回</string>
 </resources>

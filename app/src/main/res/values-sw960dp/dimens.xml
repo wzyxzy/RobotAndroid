@@ -6,4 +6,10 @@
     <dimen name="activity_main_text_size">36sp</dimen>
     <dimen name="activity_item_text_size">28sp</dimen>
     <dimen name="activity_main_text_size_large">40sp</dimen>
+    <dimen name="activity_choose_width">1200dp</dimen>
+    <dimen name="activity_choose_height">400dp</dimen>
+    <dimen name="activity_choose_divider">1dp</dimen>
+    <dimen name="activity_choose_button_margin">10dp</dimen>
+    <dimen name="grid_item_height">100dp</dimen>
+    <dimen name="activity_button_margin">40dp</dimen>
 </resources>

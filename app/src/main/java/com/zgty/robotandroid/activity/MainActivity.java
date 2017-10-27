@@ -1,11 +1,14 @@
 package com.zgty.robotandroid.activity;
 
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 
 import com.zgty.robotandroid.R;
 import com.zgty.robotandroid.adapters.TrainTimeAdapter;
+import com.zgty.robotandroid.beans.ChooseTrainNum;
 import com.zgty.robotandroid.beans.RobotEntity;
 import com.zgty.robotandroid.beans.RobotManageEntity;
 import com.zgty.robotandroid.beans.TrainInfoEntity;
@@ -25,6 +29,7 @@ import com.zgty.robotandroid.presenter.TrainInfoPresenterImpl;
 import com.zgty.robotandroid.presenter.TrainTimePresenter;
 import com.zgty.robotandroid.presenter.TrainTimePresenterImpl;
 import com.zgty.robotandroid.service.RefreshService;
+import com.zgty.robotandroid.service.RobotService;
 import com.zgty.robotandroid.util.ToastUtil;
 
 import java.util.ArrayList;
@@ -59,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private RefreshListBroadCast listBroadCast;
     private Intent intentRefreshService;
+    private Intent intentRobotService;
+    private RobotService.ServiceBinder mBinderService;
+    private ServiceConnection connection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intentRefreshService.putExtra(Constant.SERVICE_INTENT_INFO, Constant.SERVICE_INFO);
         intentRefreshService.putExtra(Constant.SERVICE_INTENT_LIST, Constant.SERVICE_LIST);
         startService(intentRefreshService);
+        intentRobotService = new Intent(this, RobotService.class);
         listBroadCast = new RefreshListBroadCast();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Constant.BROADCASTACTIONLIST);
@@ -150,6 +159,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             unregisterReceiver(listBroadCast);
             listBroadCast = null;
         }
+        if (connection != null) {
+            unbindService(connection);
+
+        }
+        if (intentRobotService != null) {
+            stopService(intentRobotService);
+            intentRobotService = null;
+        }
+
         super.onDestroy();
 
     }
@@ -158,9 +176,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.choose_train_num:
-
+//                bindRobotService();
+                Intent intent = new Intent(this, ChooseTrainNo.class);
+                startActivityForResult(intent, 11);
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 11 && resultCode == 22) {
+            bindRobotService(Constant.CHOOSE_USER_NUM_ID);
+        }
+    }
+
+    private void bindRobotService(final String id_choose) {
+        connection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                mBinderService = (RobotService.ServiceBinder) service;
+                mBinderService.startChange(id_choose);
+
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        };
+        bindService(intentRobotService, connection, Context.BIND_AUTO_CREATE);
     }
 
     @Override
