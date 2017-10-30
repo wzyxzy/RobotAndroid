@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.SupportActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -32,6 +33,19 @@ public class ChooseTrainNo extends SupportActivity implements ChooseTrainNumView
     private ChooseTrainNumAdapter chooseTrainNumAdapter;
     private List<ChooseTrainNum> chooseTrainNums;
     private ChooseTrainNumPresenter chooseTrainNumPresenter;
+
+    @Override
+    protected void onResume() {
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//保持屏幕常亮
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);//软件在后台屏幕不需要常亮
+        super.onPause();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +91,7 @@ public class ChooseTrainNo extends SupportActivity implements ChooseTrainNumView
     }
 
     private void chooseNum(int position) {
-        ToastUtil.ShowShort(this,"position:"+position);
+        ToastUtil.ShowShort(this, "position:" + position);
         Constant.CHOOSE_USER_NUM_ID = chooseTrainNums.get(position).getTrain_id();
         setResult(22);
         this.finish();
