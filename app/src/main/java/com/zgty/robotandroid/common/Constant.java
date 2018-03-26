@@ -5,7 +5,7 @@ package com.zgty.robotandroid.common;
  */
 
 public class Constant {
-    public static final String HTTP_HOST = "http://192.168.18.154:8090/robot/";//主网址
+    public static final String HTTP_HOST = "http://192.168.18.77:8090/robot/";//主网址
     public static final String BROADCASTACTIONLIST = "com.zgty.robotlist";//刷新list广播
     public static final int BROADCASTLISTTIME = 2000;//刷新list频率
     public static final String BROADCASTACTIONINFO = "com.zgty.robotinfo";//刷新info广播

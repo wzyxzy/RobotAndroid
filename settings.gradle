@@ -1,1 +1,2 @@
-include ':app'
+include ':app', ':xunfeisound', ':mscV5PlusDemo', ':speechDemo', ':mFVDemo', ':Faceidentify_SDK', ':faceDetector', ':speechAIUI', ':testeract'
+include ':faceDemo'
