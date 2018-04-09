@@ -12,15 +12,15 @@ public class TrainInfoEntity {
      * robotEntity : {"ids":"003","trainNum":"T123","startStation":"北京站","endStation":"济南站","curTrainNo":4,"arriveTrainNo":10,"status":"晚点5分钟","fixArrivalTime":"8：20","actArrivalTime":"8:23","platform":8,"departureTime":"8:25","fixDepartureTime":"8：30","stopTime":"5分钟","createTime":1507866096000,"updateTime":null}
      */
 
-    private String msg;
+    private int msg;
     private RobotManageEntity robotManageEntity;
-    private RobotEntity robotEntity;
+//    private RobotEntity robotEntity;
 
-    public String getMsg() {
+    public int getMsg() {
         return msg;
     }
 
-    public void setMsg(String msg) {
+    public void setMsg(int msg) {
         this.msg = msg;
     }
 
@@ -32,12 +32,20 @@ public class TrainInfoEntity {
         this.robotManageEntity = robotManageEntity;
     }
 
-    public RobotEntity getRobotEntity() {
-        return robotEntity;
+    @Override
+    public String toString() {
+        return "TrainInfoEntity{" +
+                "msg=" + msg +
+                ", robotManageEntity=" + robotManageEntity +
+                '}';
     }
 
-    public void setRobotEntity(RobotEntity robotEntity) {
-        this.robotEntity = robotEntity;
-    }
+    //    public RobotEntity getRobotEntity() {
+//        return robotEntity;
+//    }
+//
+//    public void setRobotEntity(RobotEntity robotEntity) {
+//        this.robotEntity = robotEntity;
+//    }
 
 }

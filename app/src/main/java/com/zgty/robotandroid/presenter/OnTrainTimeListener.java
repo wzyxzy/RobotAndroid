@@ -1,8 +1,6 @@
 package com.zgty.robotandroid.presenter;
 
-import com.zgty.robotandroid.beans.TrainInfoEntity;
-import com.zgty.robotandroid.beans.TrainTimeEntity;
-import com.zgty.robotandroid.beans.TrainTimeList;
+import com.zgty.robotandroid.beans.RobotEntity;
 
 import java.util.List;
 
@@ -14,7 +12,7 @@ public interface OnTrainTimeListener {
     /**
      * 成功时回调
      */
-    void onSuccess(TrainTimeEntity[] trainTimeEntities);
+    void onSuccess(RobotEntity[] robotEntities);
 
     /**
      * 失败时回调

@@ -5,5 +5,5 @@ package com.zgty.robotandroid.presenter;
  */
 
 public interface TrainInfoPresenter {
-    void getTrainInfo(String curTrainNo);
+    void getTrainInfo(String robot_mac);
 }

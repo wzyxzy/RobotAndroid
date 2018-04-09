@@ -7,13 +7,20 @@ import java.util.List;
  */
 
 public class TrainTimeList {
-    private List<TrainTimeEntity> trainTimeEntities;
+    private List<RobotEntity> trainTimeEntities;
 
-    public List<TrainTimeEntity> getTrainTimeEntities() {
+    public List<RobotEntity> getTrainTimeEntities() {
         return trainTimeEntities;
     }
 
-    public void setTrainTimeEntities(List<TrainTimeEntity> trainTimeEntities) {
+    public void setTrainTimeEntities(List<RobotEntity> trainTimeEntities) {
         this.trainTimeEntities = trainTimeEntities;
+    }
+
+    @Override
+    public String toString() {
+        return "TrainTimeList{" +
+                "trainTimeEntities=" + trainTimeEntities +
+                '}';
     }
 }

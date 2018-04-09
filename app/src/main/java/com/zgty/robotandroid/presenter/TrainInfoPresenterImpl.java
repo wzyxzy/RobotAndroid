@@ -21,8 +21,8 @@ public class TrainInfoPresenterImpl implements TrainInfoPresenter, OnTrainInfoLi
 
 
     @Override
-    public void getTrainInfo(String curTrainNo) {
-        trainInfoModel.loadTrainInfo(curTrainNo, this);
+    public void getTrainInfo(String robot_mac) {
+        trainInfoModel.loadTrainInfo(robot_mac, this);
     }
 
     @Override

@@ -1,8 +1,7 @@
 package com.zgty.robotandroid.activity;
 
-import com.zgty.robotandroid.beans.TrainTimeEntity;
+import com.zgty.robotandroid.beans.RobotEntity;
 
-import java.util.List;
 
 /**
  * Created by zy on 2017/10/24.
@@ -11,5 +10,5 @@ import java.util.List;
 public interface TrainTimeView {
     void showError();
 
-    void setTrainTime(TrainTimeEntity[] trainTimeEntities);
+    void setTrainTime(RobotEntity[] robotEntities);
 }

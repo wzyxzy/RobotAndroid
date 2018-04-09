@@ -5,45 +5,20 @@ package com.zgty.robotandroid.beans;
  */
 
 public class RobotEntity {
-    /**
-     * ids : 003
-     * trainNum : T123
-     * startStation : 北京站
-     * endStation : 济南站
-     * curTrainNo : 4
-     * arriveTrainNo : 10
-     * status : 晚点5分钟
-     * fixArrivalTime : 8：20
-     * actArrivalTime : 8:23
-     * platform : 8
-     * departureTime : 8:25
-     * fixDepartureTime : 8：30
-     * stopTime : 5分钟
-     * createTime : 1507866096000
-     * updateTime : null
-     */
+    private int ids;
+    private String trainNum;// 车次
+    private String startStation;// 始发站
+    private String endStation;// 终点站
+    private long status;// 状态
+    private String departureTime;// 发车时间
+    private String stopTime;// 停靠时间
+    private String stationName;// 站名
 
-    private String ids;
-    private String trainNum;//车次
-    private String startStation;//始发站
-    private String endStation;//终点站
-    private int curTrainNo;//当前车厢号
-    private int arriveTrainNo;//前往车厢号
-    private String status;//状态
-    private String fixArrivalTime;//固定到达时间
-    private String actArrivalTime;//实际到达时间
-    private int platform;//站台
-    private String departureTime;//发车时间
-    private String fixDepartureTime;//固定发车时间
-    private String stopTime;//停靠时间
-    private long createTime;//创建日期
-    private Object updateTime;//更新日期
-
-    public String getIds() {
+    public int getIds() {
         return ids;
     }
 
-    public void setIds(String ids) {
+    public void setIds(int ids) {
         this.ids = ids;
     }
 
@@ -71,52 +46,12 @@ public class RobotEntity {
         this.endStation = endStation;
     }
 
-    public int getCurTrainNo() {
-        return curTrainNo;
-    }
-
-    public void setCurTrainNo(int curTrainNo) {
-        this.curTrainNo = curTrainNo;
-    }
-
-    public int getArriveTrainNo() {
-        return arriveTrainNo;
-    }
-
-    public void setArriveTrainNo(int arriveTrainNo) {
-        this.arriveTrainNo = arriveTrainNo;
-    }
-
-    public String getStatus() {
+    public long getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(long status) {
         this.status = status;
-    }
-
-    public String getFixArrivalTime() {
-        return fixArrivalTime;
-    }
-
-    public void setFixArrivalTime(String fixArrivalTime) {
-        this.fixArrivalTime = fixArrivalTime;
-    }
-
-    public String getActArrivalTime() {
-        return actArrivalTime;
-    }
-
-    public void setActArrivalTime(String actArrivalTime) {
-        this.actArrivalTime = actArrivalTime;
-    }
-
-    public int getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(int platform) {
-        this.platform = platform;
     }
 
     public String getDepartureTime() {
@@ -127,14 +62,6 @@ public class RobotEntity {
         this.departureTime = departureTime;
     }
 
-    public String getFixDepartureTime() {
-        return fixDepartureTime;
-    }
-
-    public void setFixDepartureTime(String fixDepartureTime) {
-        this.fixDepartureTime = fixDepartureTime;
-    }
-
     public String getStopTime() {
         return stopTime;
     }
@@ -143,19 +70,25 @@ public class RobotEntity {
         this.stopTime = stopTime;
     }
 
-    public long getCreateTime() {
-        return createTime;
+    public String getStationName() {
+        return stationName;
     }
 
-    public void setCreateTime(long createTime) {
-        this.createTime = createTime;
+    public void setStationName(String stationName) {
+        this.stationName = stationName;
     }
 
-    public Object getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Object updateTime) {
-        this.updateTime = updateTime;
+    @Override
+    public String toString() {
+        return "RobotEntity{" +
+                "ids=" + ids +
+                ", trainNum='" + trainNum + '\'' +
+                ", startStation='" + startStation + '\'' +
+                ", endStation='" + endStation + '\'' +
+                ", status=" + status +
+                ", departureTime='" + departureTime + '\'' +
+                ", stopTime='" + stopTime + '\'' +
+                ", stationName='" + stationName + '\'' +
+                '}';
     }
 }

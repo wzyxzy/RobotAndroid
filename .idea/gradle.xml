@@ -8,16 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Faceidentify_SDK" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/faceDemo" />
-            <option value="$PROJECT_DIR$/faceDetector" />
-            <option value="$PROJECT_DIR$/mFVDemo" />
-            <option value="$PROJECT_DIR$/mscV5PlusDemo" />
-            <option value="$PROJECT_DIR$/speechAIUI" />
-            <option value="$PROJECT_DIR$/speechDemo" />
-            <option value="$PROJECT_DIR$/testeract" />
-            <option value="$PROJECT_DIR$/xunfeisound" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

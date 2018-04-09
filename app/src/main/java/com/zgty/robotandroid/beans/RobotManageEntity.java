@@ -15,6 +15,7 @@ public class RobotManageEntity {
     private int ids;
     private String curTrainNo;//当前车厢号
     private String direction;//方向
+    private int platform;//站台
 
     public int getIds() {
         return ids;
@@ -38,5 +39,23 @@ public class RobotManageEntity {
 
     public void setDirection(String direction) {
         this.direction = direction;
+    }
+
+    public int getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(int platform) {
+        this.platform = platform;
+    }
+
+    @Override
+    public String toString() {
+        return "RobotManageEntity{" +
+                "ids=" + ids +
+                ", curTrainNo='" + curTrainNo + '\'' +
+                ", direction='" + direction + '\'' +
+                ", platform=" + platform +
+                '}';
     }
 }

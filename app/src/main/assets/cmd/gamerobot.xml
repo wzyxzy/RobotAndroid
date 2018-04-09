@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<String>
+    <!-- 第一个角色的招式一 -->
+     <action type="role1up">forward</action>
+     <action type="role1left">mvL</action>
+     <action type="role1right">mvR</action>
+     <action type="role1down">backward</action>
+     <action type="role1turn_left">turnL</action>
+     <action type="role1turn_right">turnR</action>
+     <action type="role1up2">Rpunch|punch</action>
+     <action type="role1left1">Lpunch|punch</action>
+     <action type="role1right3">Rkick|kick</action>
+     <action type="role1down4">Lkick|kick</action>   
+</String>

@@ -12,4 +12,15 @@
     <string name="name_startendStation">发/到站</string>
     <string name="choose_train_no">请选择车厢号</string>
     <string name="choose_train_back">返回</string>
+    <string name="SwitchOK">引擎切换完成</string>
+    <string-array name="b_msg_chat_empty_answer">
+        <item>这个问题难住我了，看来我仍需继续努力学习</item>
+        <item>这个问题问倒我了，看来我仍需继续努力学习</item>
+        <item>看来我们老板需要花钱雇人来给我做相关培训了</item>
+        <item>我现在还小，等我长大了我就会知道更多了</item>
+        <item>活到老学到老，看来我需要不断给自己加油充电了</item>
+        <item>晚上下班回家我会加班学习一下相关知识的</item>
+        <item>不好意思，我走神了</item>
+        <item>你说什么来着？我好像没听清</item>
+    </string-array>
 </resources>

@@ -1,7 +1,6 @@
 package com.zgty.robotandroid.presenter;
 
 import com.zgty.robotandroid.beans.ChooseTrainNum;
-import com.zgty.robotandroid.beans.TrainTimeEntity;
 
 /**
  * Created by zy on 2017/10/26.

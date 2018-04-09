@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Faceidentify_SDK/Faceidentify_SDK.iml" filepath="$PROJECT_DIR$/Faceidentify_SDK/Faceidentify_SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/RobotAndroid.iml" filepath="$PROJECT_DIR$/RobotAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/faceDemo/faceDemo.iml" filepath="$PROJECT_DIR$/faceDemo/faceDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/faceDetector/faceDetector.iml" filepath="$PROJECT_DIR$/faceDetector/faceDetector.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mFVDemo/mFVDemo.iml" filepath="$PROJECT_DIR$/mFVDemo/mFVDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mscV5PlusDemo/mscV5PlusDemo.iml" filepath="$PROJECT_DIR$/mscV5PlusDemo/mscV5PlusDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/speechAIUI/speechAIUI.iml" filepath="$PROJECT_DIR$/speechAIUI/speechAIUI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/speechDemo/speechDemo.iml" filepath="$PROJECT_DIR$/speechDemo/speechDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testeract/testeract.iml" filepath="$PROJECT_DIR$/testeract/testeract.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xunfeisound/xunfeisound.iml" filepath="$PROJECT_DIR$/xunfeisound/xunfeisound.iml" />
     </modules>
   </component>
 </project>

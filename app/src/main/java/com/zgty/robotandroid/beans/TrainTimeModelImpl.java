@@ -17,12 +17,12 @@ import java.util.List;
 
 public class TrainTimeModelImpl implements TrainTimeModel {
     @Override
-    public void loadTrainTime(String trainNum, final OnTrainTimeListener onTrainTimeListener) {
+    public void loadTrainTime(String platform, final OnTrainTimeListener onTrainTimeListener) {
 //        final Type founderListType = new TypeToken<ArrayList<TrainTimeEntity>>() {
 //        }.getType();
-        VolleyRequest.newInstance().newGsonRequest(Constant.HTTP_HOST + "findTrainTime?trainNum=" + trainNum, TrainTimeEntity[].class, new Response.Listener<TrainTimeEntity[]>() {
+        VolleyRequest.newInstance().newGsonRequest(Constant.HTTP_HOST + "findTrainTime?platform=" + platform, RobotEntity[].class, new Response.Listener<RobotEntity[]>() {
             @Override
-            public void onResponse(TrainTimeEntity[] response) {
+            public void onResponse(RobotEntity[] response) {
 
                 if (response != null) {
                     onTrainTimeListener.onSuccess(response);

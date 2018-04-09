@@ -1,8 +1,7 @@
 package com.zgty.robotandroid.presenter;
 
 import com.zgty.robotandroid.activity.TrainTimeView;
-import com.zgty.robotandroid.beans.TrainTimeEntity;
-import com.zgty.robotandroid.beans.TrainTimeList;
+import com.zgty.robotandroid.beans.RobotEntity;
 import com.zgty.robotandroid.beans.TrainTimeModel;
 import com.zgty.robotandroid.beans.TrainTimeModelImpl;
 
@@ -29,8 +28,8 @@ public class TrainTimePresenterImpl implements TrainTimePresenter, OnTrainTimeLi
     }
 
     @Override
-    public void onSuccess(TrainTimeEntity[] trainTimeEntities) {
-        trainTimeView.setTrainTime(trainTimeEntities);
+    public void onSuccess(RobotEntity[] robotEntities) {
+        trainTimeView.setTrainTime(robotEntities);
 
     }
 

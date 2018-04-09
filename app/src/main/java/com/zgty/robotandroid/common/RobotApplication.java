@@ -1,13 +1,26 @@
 package com.zgty.robotandroid.common;
 
 import android.app.Application;
+import android.net.Uri;
+import android.os.Handler;
+import android.util.Log;
 
 import com.facebook.stetho.Stetho;
+import com.github.promeg.pinyinhelper.Pinyin;
+import com.leo.api.LeoRobot;
+import com.zgty.robotandroid.util.LeoSpeech;
+import com.leo.api.abstracts.IResultProcessor;
+import com.leo.api.abstracts.IRobotListener;
+import com.leo.api.nlp.NLPResult;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
+import com.zgty.robotandroid.business.ResultProcessor;
+import com.zgty.robotandroid.util.SpeechTools;
 import com.zgty.robotandroid.util.VolleyRequest;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -18,6 +31,7 @@ import okhttp3.OkHttpClient;
 
 public class RobotApplication extends Application {
     private static RobotApplication instance;
+    private boolean canSpeech = true;
 
     @Override
     public void onCreate() {
@@ -26,6 +40,104 @@ public class RobotApplication extends Application {
         instance = this;
         initOkGo();
         initStetho();
+        initLeo();
+    }
+
+    private void initLeo() {
+        new LeoRobot().init(this, new IRobotListener() {
+            @Override
+            public void onTouch() {
+
+            }
+
+            @Override
+            public void getElect(int i) {
+
+            }
+
+            @Override
+            public void getDistance(int i) {
+                Log.d("红外距离", String.valueOf(i));
+                if (canSpeech && i <= 50 && !SpeechTools.isBusy(instance)) {
+                    canSpeech = false;
+                    SpeechTools.speakAndRestartRecognize("您去几车厢？");
+                    new Handler().postDelayed(new Runnable(){
+                        public void run() {
+                            //execute the task
+                            canSpeech = true;
+                        }
+                    }, 10000);
+
+                }
+
+//                Timer timer = new Timer();
+//                timer.schedule(new TimerTask() {
+//                    @Override
+//                    public void run() {
+//                        canSpeech = true;
+//                    }
+//                }, 10000);
+
+            }
+
+            @Override
+            public void onActionStop() {
+
+            }
+
+            @Override
+            public void getBoardVersion(String s) {
+
+            }
+
+            @Override
+            public void getWifiInfo(String s, String s1, int i) {
+
+            }
+
+            @Override
+            public void onReached(String s) {
+
+            }
+
+            @Override
+            public void onReachCardSuccess(Object o) {
+
+            }
+
+            @Override
+            public void onReachCardError(String s) {
+
+            }
+
+            @Override
+            public void onMeetObstacle() {
+
+            }
+
+            @Override
+            public void onCharegState(int i) {
+
+            }
+
+            @Override
+            public void onPlayVideo(Uri uri) {
+
+            }
+
+            @Override
+            public void onMicWakeUp() {
+
+            }
+
+            @Override
+            public void onPCSerialDate(byte[] bytes) {
+
+            }
+        });
+        Pinyin.init(null);
+
+
     }
 
     private void initStetho() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,6 +33,7 @@
                 android:textStyle="bold" />
 
             <View
+                android:id="@+id/robot_num"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2" />
@@ -212,10 +213,26 @@
                     android:id="@+id/train_list_all"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:listSelector="@color/yellow_green"
                     android:divider="@color/white"
-                    android:dividerHeight="0.5dp" />
+                    android:dividerHeight="0.5dp"
+                    android:listSelector="@color/yellow_green" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+
+    <TextView
+        android:id="@+id/people_speak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="60sp" />
+
+    <TextView
+        android:id="@+id/words_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
+</RelativeLayout>

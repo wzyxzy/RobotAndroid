@@ -5,5 +5,5 @@ package com.zgty.robotandroid.presenter;
  */
 
 public interface TrainTimePresenter {
-    void getTrainTime(String trainNum);
+    void getTrainTime(String platform);
 }
