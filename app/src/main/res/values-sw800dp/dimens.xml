@@ -4,7 +4,7 @@
     <dimen name="activity_main_left_bottom_margin">18dp</dimen>
     <dimen name="activity_main_right_item">48dp</dimen>
     <dimen name="activity_main_text_size">32sp</dimen>
-    <dimen name="activity_item_text_size">26sp</dimen>
+    <dimen name="activity_item_text_size">20sp</dimen>
     <dimen name="activity_main_text_size_large">36sp</dimen>
     <dimen name="activity_choose_width">1000dp</dimen>
     <dimen name="activity_choose_height">360dp</dimen>

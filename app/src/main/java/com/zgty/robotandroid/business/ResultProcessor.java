@@ -31,9 +31,9 @@ public class ResultProcessor implements IResultProcessor {
     // 休息功能
     //private PreBusiness mPreBusiness;
     // 阻塞性且非必须的business，有了这个，就不能执行后面的business了，比如自由点播，复位后要重启语音识别
-    private IBusiness mBlockBusiness;
-    // business列表，都是固定的功能，初始化以后不能增删，也不能无效化
-    private ArrayList<IBusinessNLP> mBusinesses = new ArrayList<IBusinessNLP>();
+//    private IBusiness mBlockBusiness;
+//    // business列表，都是固定的功能，初始化以后不能增删，也不能无效化
+//    private ArrayList<IBusinessNLP> mBusinesses = new ArrayList<IBusinessNLP>();
     private OnVoiceListener onVoiceListener;
 
     public void setOnVoiceListener(OnVoiceListener onVoiceListener) {
@@ -69,7 +69,7 @@ public class ResultProcessor implements IResultProcessor {
 
     @Override
     public void onInit() {
-
+        Logs.d(TAG, "onInit");
     }
 
 
@@ -105,8 +105,6 @@ public class ResultProcessor implements IResultProcessor {
     public void onSwitchOK() {
         Logs.d(TAG, "onSwitchOK");
         // 播放提示语
-        String tip = mContext.getResources().getString(R.string.SwitchOK);
-        LeoSpeech.speak(tip, null);
     }
 
     private void handleResult(NLPResult nlp) {
@@ -139,17 +137,25 @@ public class ResultProcessor implements IResultProcessor {
             num = pinyin.split("CHE|XIAO")[0];
         } else if (pinyin.contains("CE|XIAO")) {
             num = pinyin.split("CE|XIAO")[0];
-        } else if (pinyin.contains("CHE")) {
-            num = pinyin.split("CHE")[0];
-        } else if (pinyin.contains("CE")) {
-            num = pinyin.split("CE")[0];
+//        } else if (pinyin.contains("CHE")) {
+//            num = pinyin.split("CHE")[0];
+//        } else if (pinyin.contains("CE")) {
+//            num = pinyin.split("CE")[0];
         }
         if (TextUtils.isEmpty(num)) {
             reset();
             return;
         } else {
 
-            if (num.contains("1|6") || num.contains("SHI|LIU") || num.contains("SI|LIU")) {
+            if (num.contains("2|0") || num.contains("ER|SHI") || num.contains("ER|SI")) {
+                nums = 20;
+            } else if (num.contains("1|9") || num.contains("SHI|JIU") || num.contains("SI|JIU")) {
+                nums = 19;
+            } else if (num.contains("1|8") || num.contains("SHI|BA") || num.contains("SI|BA")) {
+                nums = 18;
+            } else if (num.contains("1|7") || num.contains("SHI|QI") || num.contains("SI|QI")) {
+                nums = 17;
+            } else if (num.contains("1|6") || num.contains("SHI|LIU") || num.contains("SI|LIU")) {
                 nums = 16;
             } else if (num.contains("1|5") || num.contains("SHI|WU") || num.contains("SI|WU")) {
                 nums = 15;
@@ -200,12 +206,12 @@ public class ResultProcessor implements IResultProcessor {
 
     public void reset() {
 
-        if (LeoRobot.repeat_count<=3){
-            LeoRobot.repeat_count++;
-            Log.d(TAG, "no business repeat_count ++ =" + LeoRobot.repeat_count);
-            onVoiceListener.onFail();
-//            SpeechTools.speakAndRestartRecognize("您去几车厢？");
-        }
+//        if (LeoRobot.repeat_count<=3){
+//            LeoRobot.repeat_count++;
+//            Log.d(TAG, "no business repeat_count ++ =" + LeoRobot.repeat_count);
+//            onVoiceListener.onFail();
+////            SpeechTools.speakAndRestartRecognize("您去几车厢？");
+//        }
 
     }
 

@@ -21,6 +21,7 @@ public class RefreshService extends Service {
 
     private Timer timer_list;
     private Timer timer_info;
+    private Timer timer_broad;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -33,6 +34,7 @@ public class RefreshService extends Service {
 //        intent.putExtra(Constant.SERVICE_INTENT_LIST, Constant.SERVICE_LIST);
         int info_service = intent.getIntExtra(Constant.SERVICE_INTENT_INFO, -1);
         int list_service = intent.getIntExtra(Constant.SERVICE_INTENT_LIST, -1);
+        int broad_service = intent.getIntExtra(Constant.SERVICE_INTENT_BROAD, -1);
         if (info_service == Constant.SERVICE_INFO) {
             timer_info = new Timer();
             timer_info.schedule(new TimerTask() {
@@ -56,6 +58,18 @@ public class RefreshService extends Service {
                     sendBroadcast(intent1);
                 }
             }, 0, Constant.BROADCASTLISTTIME);
+        }
+        if (broad_service == Constant.SERVICE_BROAD) {
+            timer_broad = new Timer();
+            timer_broad.schedule(new TimerTask() {
+                @Override
+                public void run() {
+
+                    Intent intent1 = new Intent();
+                    intent1.setAction(Constant.BROADCASTACTIONBROADCAST);
+                    sendBroadcast(intent1);
+                }
+            }, 0, Constant.BROADCASTBROADCAST);
         }
 
         return super.onStartCommand(intent, flags, startId);

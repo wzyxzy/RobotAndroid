@@ -23,7 +23,9 @@ public class TrainTimeAdapter extends WZYBaseAdapter<RobotEntity> {
         TextView name_startendTime = (TextView) holder.getView(R.id.name_startendTime);
         TextView name_startendStation = (TextView) holder.getView(R.id.name_startendStation);
         name_train_num.setText(trainTimeEntity.getTrainNum());
-        name_startendTime.setText(trainTimeEntity.getStartStation().split("站")[0] + "/" + trainTimeEntity.getEndStation().split("站")[0]);
-        name_startendStation.setText(trainTimeEntity.getDepartureTime());
+//        name_startendTime.setText(trainTimeEntity.getStartStation().split("站")[0] + "/" + trainTimeEntity.getEndStation().split("站")[0]);
+        name_startendTime.setText(trainTimeEntity.getDepartureTime() + "/" + trainTimeEntity.getArriveTime());
+//        name_startendStation.setText(trainTimeEntity.getDepartureTime());
+        name_startendStation.setText(trainTimeEntity.getStartStation().split("站")[0] + "/" + trainTimeEntity.getEndStation().split("站")[0]);
     }
 }

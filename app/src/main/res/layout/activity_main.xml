@@ -214,11 +214,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:divider="@color/white"
-                    android:dividerHeight="0.5dp"
-                    android:listSelector="@color/yellow_green" />
+                    android:dividerHeight="0.5dp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/speech_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" />
 
 
     <TextView

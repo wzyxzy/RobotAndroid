@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.SupportActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -58,7 +59,7 @@ public class ChooseTrainNo extends SupportActivity implements ChooseTrainNumView
 
     @Override
     public void showError() {
-        ToastUtil.ShowShort(this, "数据出错");
+        Log.e("choose_num", "数据出错");
     }
 
     @Override
@@ -93,7 +94,7 @@ public class ChooseTrainNo extends SupportActivity implements ChooseTrainNumView
     }
 
     private void chooseNum(int position) {
-        ToastUtil.ShowShort(this, "position:" + position);
+//        ToastUtil.ShowShort(this, "position:" + position);
         Constant.CHOOSE_USER_NUM_ID = chooseTrainNums.get(position).getTrain_id();
         setResult(22);
         this.finish();

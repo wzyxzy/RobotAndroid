@@ -1,6 +1,7 @@
 package com.zgty.robotandroid.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,15 @@ public abstract class WZYBaseAdapter<T> extends BaseAdapter {
             this.data = data;
         }
     }
+
+    public void setSelectItem(int selectItem) {
+        this.selectItem = selectItem;
+        canChangeBac = true;
+    }
+
+    private int selectItem = -1;
+    private boolean canChangeBac = false;
+
 
     /**
      * 更新数据源(传递进来的数据源不为null,并且size大于0)
@@ -87,8 +97,18 @@ public abstract class WZYBaseAdapter<T> extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+
         //数据加载
         bindData(holder, getItem(position), position);
+
+        if (canChangeBac){
+            if (position == selectItem) {
+                convertView.setBackgroundColor(Color.YELLOW);
+            } else {
+                convertView.setBackgroundColor(Color.TRANSPARENT);
+            }
+        }
+
         return convertView;
 
     }

@@ -25,13 +25,15 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 
+import static com.zgty.robotandroid.common.Constant.RED_DIRECTION;
+
 /**
  * Created by zy on 2017/10/20.
  */
 
 public class RobotApplication extends Application {
     private static RobotApplication instance;
-    private boolean canSpeech = true;
+    public static boolean canSpeech = true;
 
     @Override
     public void onCreate() {
@@ -58,10 +60,15 @@ public class RobotApplication extends Application {
             @Override
             public void getDistance(int i) {
                 Log.d("红外距离", String.valueOf(i));
-                if (canSpeech && i <= 50 && !SpeechTools.isBusy(instance)) {
+
+                if (canSpeech && i <= RED_DIRECTION) {
+                    if (SpeechTools.isBusy(instance)) {
+                        LeoSpeech.stopSpeak();
+                    }
                     canSpeech = false;
+                    LeoSpeech.setEnglishMode(false);
                     SpeechTools.speakAndRestartRecognize("您去几车厢？");
-                    new Handler().postDelayed(new Runnable(){
+                    new Handler().postDelayed(new Runnable() {
                         public void run() {
                             //execute the task
                             canSpeech = true;

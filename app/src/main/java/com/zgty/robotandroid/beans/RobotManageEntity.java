@@ -14,8 +14,10 @@ public class RobotManageEntity {
 
     private int ids;
     private String curTrainNo;//当前车厢号
+    private String lastTrainNo;// 最大车厢号
     private String direction;//方向
     private int platform;//站台
+    private int redDirection;// 红外距离
 
     public int getIds() {
         return ids;
@@ -49,13 +51,31 @@ public class RobotManageEntity {
         this.platform = platform;
     }
 
+    public String getLastTrainNo() {
+        return lastTrainNo;
+    }
+
+    public void setLastTrainNo(String lastTrainNo) {
+        this.lastTrainNo = lastTrainNo;
+    }
+
+    public int getRedDirection() {
+        return redDirection;
+    }
+
+    public void setRedDirection(int redDirection) {
+        this.redDirection = redDirection;
+    }
+
     @Override
     public String toString() {
         return "RobotManageEntity{" +
                 "ids=" + ids +
                 ", curTrainNo='" + curTrainNo + '\'' +
+                ", lastTrainNo='" + lastTrainNo + '\'' +
                 ", direction='" + direction + '\'' +
                 ", platform=" + platform +
+                ", redDirection=" + redDirection +
                 '}';
     }
 }

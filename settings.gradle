@@ -1,1 +1,3 @@
-include ':app'
+include ':app', ':mscV5PlusDemo2'
+project(':mscV5PlusDemo2').projectDir = new File('mscV5PlusDemo')
+include ':demoTest2'
