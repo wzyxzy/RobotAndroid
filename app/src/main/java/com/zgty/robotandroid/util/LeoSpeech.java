@@ -268,13 +268,13 @@ public class LeoSpeech {
         mRecognizer.setParameter("result_type", "json");
         // 设置本地识别使用语法id
         mRecognizer.setParameter(SpeechConstant.LOCAL_GRAMMAR, "zgty");
-//        // 设置识别的门限值
-//        mRecognizer.setParameter(SpeechConstant.MIXED_THRESHOLD, "60");
+        // 设置识别的门限值
+        mRecognizer.setParameter(SpeechConstant.MIXED_THRESHOLD, "60");
 //        // 使用8k音频的时候请解开注释
 //        // mAsr.setParameter(SpeechConstant.SAMPLE_RATE, "8000");
-//        mRecognizer.setParameter(SpeechConstant.DOMAIN, "iat");
-//        mRecognizer.setParameter(SpeechConstant.NLP_VERSION, "2.0");
-//        mRecognizer.setParameter("asr_sch", "1");
+        mRecognizer.setParameter(SpeechConstant.DOMAIN, "iat");
+        mRecognizer.setParameter(SpeechConstant.NLP_VERSION, "2.0");
+        mRecognizer.setParameter("asr_sch", "1");
         // mAsr.setParameter(SpeechConstant.RESULT_TYPE, "json");
         if (mIsEnglish) {
             mRecognizer.setParameter("language", "en_us");

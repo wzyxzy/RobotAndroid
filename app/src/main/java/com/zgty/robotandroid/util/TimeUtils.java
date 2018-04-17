@@ -72,24 +72,7 @@ public class TimeUtils {
 
     }
 
-
-    public static int compareBefore(String comTime, int time) {
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-        long dateCompared;
-        try {
-            dateCompared = simpleDateFormat.parse(comTime).getTime();
-            long befTime = dateCompared - 60000 * time;
-            Date date2 = new Date(befTime);
-            return compareTime(simpleDateFormat.format(date2));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return 10;
-    }
-
     public static int compareAfter(String comTime, int time) {
-        Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
         long dateCompared;
         try {

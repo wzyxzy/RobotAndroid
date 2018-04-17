@@ -26,5 +26,9 @@ public class Constant {
     public static int ROBOT_PLATFORM = 8;//机器人所在站台
     public static String ROBOT_MAC = "ABCD";//当前机器人MAC
     public static String ROBOT_DIR = "向前";//当前机器人朝向
+    public static String START_STATION = "天津站";//首发站
+    public static String END_STATION = "上海站";//终点站
+    public static String STATION_NAME = "北京站";//当前站
+    public static String TRAIN_NUM = "T123";//当前车次
     public static int RED_DIRECTION = 40;//当前红外线距离
 }

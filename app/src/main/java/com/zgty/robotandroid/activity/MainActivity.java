@@ -27,6 +27,7 @@ import com.leo.api.abstracts.ISpeakListener;
 import com.zgty.robotandroid.beans.BroadCast;
 import com.zgty.robotandroid.presenter.BroadCastPresenter;
 import com.zgty.robotandroid.presenter.BroadCastPresenterImpl;
+import com.zgty.robotandroid.util.CompareAndSpeech;
 import com.zgty.robotandroid.util.FucUtil;
 import com.zgty.robotandroid.util.LeoSpeech;
 import com.leo.api.abstracts.IViewActionListener;
@@ -57,12 +58,16 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.zgty.robotandroid.common.Constant.END_STATION;
 import static com.zgty.robotandroid.common.Constant.LAST_STATION;
 import static com.zgty.robotandroid.common.Constant.NOW_STATION;
 import static com.zgty.robotandroid.common.Constant.RED_DIRECTION;
 import static com.zgty.robotandroid.common.Constant.ROBOT_DIR;
 import static com.zgty.robotandroid.common.Constant.ROBOT_MAC;
 import static com.zgty.robotandroid.common.Constant.ROBOT_PLATFORM;
+import static com.zgty.robotandroid.common.Constant.START_STATION;
+import static com.zgty.robotandroid.common.Constant.STATION_NAME;
+import static com.zgty.robotandroid.common.Constant.TRAIN_NUM;
 import static com.zgty.robotandroid.common.RobotApplication.canSpeech;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, TrainInfoView, TrainTimeView, BroadCastInfo, IViewUpdater {
@@ -98,11 +103,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Intent intentRobotService;
     private RobotService.ServiceBinder mBinderService;
     private ServiceConnection connection;
-    private boolean[] has_speech = {false, false, false, false};
+    //    private boolean[] has_speech = {false, false, false, false};
     private int choose_num = 0;
-    private int[] count = {0, 0, 0, 0};
-    private String[] chn;
-    private String[] eng;
+    private CompareAndSpeech compareAndSpeech;
+    private List<BroadCast> broadCasts;
+//    private int[] count = {0, 0, 0, 0};
+//    private String[] chn;
+//    private String[] eng;
 
 
     @Override
@@ -166,22 +173,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ROBOT_MAC = StringUtils.getPhoneIMEI(this);
         Log.d("mac", ROBOT_MAC);
         trainTimeEntities = new ArrayList<>();
+        broadCasts = new ArrayList<>();
         trainTimeAdapter = new TrainTimeAdapter(trainTimeEntities, this, R.layout.item_train);
         train_list_all.setAdapter(trainTimeAdapter);
         choose_train_num.setOnClickListener(this);
         trainInfoPresenter = new TrainInfoPresenterImpl(this);
         trainTimePresenter = new TrainTimePresenterImpl(this);
         broadCastPresenter = new BroadCastPresenterImpl(this);
-        chn = new String[4];
-        eng = new String[4];
-        chn[3] = getString(R.string.station_after3m);
-        eng[3] = getString(R.string.station_after3mE);
-        chn[0] = getString(R.string.station_after);
-        eng[0] = getString(R.string.station_afterE);
-        chn[2] = getString(R.string.station_before1m);
-        eng[2] = getString(R.string.station_before1mE);
-        chn[1] = getString(R.string.station_before);
-        eng[1] = getString(R.string.station_beforeE);
+        compareAndSpeech = new CompareAndSpeech(this);
+//        chn = new String[4];
+//        eng = new String[4];
+//        chn[3] = getString(R.string.station_after3m);
+//        eng[3] = getString(R.string.station_after3mE);
+//        chn[0] = getString(R.string.station_after);
+//        eng[0] = getString(R.string.station_afterE);
+//        chn[2] = getString(R.string.station_before1m);
+//        eng[2] = getString(R.string.station_before1mE);
+//        chn[1] = getString(R.string.station_before);
+//        eng[1] = getString(R.string.station_beforeE);
         intentRefreshService = new Intent();
         intentRefreshService.setClass(this, RefreshService.class);
         intentRefreshService.putExtra(Constant.SERVICE_INTENT_INFO, Constant.SERVICE_INFO);
@@ -335,67 +344,73 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void setTrainTime(BroadCast[] broadCasts) {
-
-        for (int i = 0; i < broadCasts.length; i++) {
-            switch (broadCasts[i].getName()) {
-                case "before":
-                    chn[1] = broadCasts[i].getContent();
-                    break;
-                case "before1m":
-                    chn[2] = broadCasts[i].getContent();
-                    break;
-                case "after":
-                    chn[0] = broadCasts[i].getContent();
-                    break;
-                case "after3m":
-                    chn[3] = broadCasts[i].getContent();
-                    break;
-                case "beforeE":
-                    eng[1] = broadCasts[i].getContent();
-                    break;
-                case "before1mE":
-                    eng[2] = broadCasts[i].getContent();
-                    break;
-                case "afterE":
-                    eng[0] = broadCasts[i].getContent();
-                    break;
-                case "after3mE":
-                    eng[3] = broadCasts[i].getContent();
-                    break;
-            }
+    public void setTrainTime(BroadCast[] broadCast) {
+        broadCasts = Arrays.asList(broadCast);
+        for (BroadCast broadCast1 : broadCasts) {
+            broadCast1.setCount(0);
         }
+        compareAndSpeech.setBroadCasts(broadCasts);
+
+//        for (int i = 0; i < broadCasts.length; i++) {
+//
+//            switch (broadCasts[i].getName()) {
+//                case "before":
+//                    chn[1] = broadCasts[i].getContent();
+//                    break;
+//                case "before1m":
+//                    chn[2] = broadCasts[i].getContent();
+//                    break;
+//                case "after":
+//                    chn[0] = broadCasts[i].getContent();
+//                    break;
+//                case "after3m":
+//                    chn[3] = broadCasts[i].getContent();
+//                    break;
+//                case "beforeE":
+//                    eng[1] = broadCasts[i].getContent();
+//                    break;
+//                case "before1mE":
+//                    eng[2] = broadCasts[i].getContent();
+//                    break;
+//                case "afterE":
+//                    eng[0] = broadCasts[i].getContent();
+//                    break;
+//                case "after3mE":
+//                    eng[3] = broadCasts[i].getContent();
+//                    break;
+//            }
+//        }
 
     }
 
 
-    private void speakTime(int i, final int num) {
-        LeoSpeech.setEnglishMode(false);
-
-        chn[num] = chn[num].replace("@StartStation", trainTimeEntities.get(i).getStartStation());
-        chn[num] = chn[num].replace("@trid", StringUtils.splitString(trainTimeEntities.get(i).getTrainNum()));
-        chn[num] = chn[num].replace("@TerStation", trainTimeEntities.get(i).getEndStation());
-        chn[num] = chn[num].replace("@LocalStation", trainTimeEntities.get(i).getStationName());
-        chn[num] = chn[num].replace("@PlatformC", String.valueOf(ROBOT_PLATFORM) + "站台");
-        final int finalI = i;
-        LeoSpeech.speak(chn[num], new ISpeakListener() {
-            @Override
-            public void onSpeakOver(int j) {
-                count[num]++;
-                if (count[num] >= 3) {
-                    has_speech[num] = true;
-                }
-                LeoSpeech.setEnglishMode(true);
-
-                eng[num] = eng[num].replace("@StartStation", Pinyin.toPinyin(StringUtils.splitString(trainTimeEntities.get(finalI).getStartStation().split("站")[0], "'"), "").toLowerCase());
-                eng[num] = eng[num].replace("@trid", StringUtils.splitString(trainTimeEntities.get(finalI).getTrainNum()));
-                eng[num] = eng[num].replace("@TerStation", Pinyin.toPinyin(StringUtils.splitString(trainTimeEntities.get(finalI).getEndStation().split("站")[0], "'"), "").toLowerCase());
-                eng[num] = eng[num].replace("@LocalStation", Pinyin.toPinyin(StringUtils.splitString(trainTimeEntities.get(finalI).getStationName().split("站")[0], "'"), "").toLowerCase());
-                eng[num] = eng[num].replace("@PlatformC", "platform " + String.valueOf(ROBOT_PLATFORM));
-                LeoSpeech.speak(eng[num], null);
-            }
-        });
-    }
+//    private void speakTime(int i, final int num) {
+//        LeoSpeech.setEnglishMode(false);
+//
+//        chn[num] = chn[num].replace("@StartStation", trainTimeEntities.get(i).getStartStation());
+//        chn[num] = chn[num].replace("@trid", StringUtils.splitString(trainTimeEntities.get(i).getTrainNum()));
+//        chn[num] = chn[num].replace("@TerStation", trainTimeEntities.get(i).getEndStation());
+//        chn[num] = chn[num].replace("@LocalStation", trainTimeEntities.get(i).getStationName());
+//        chn[num] = chn[num].replace("@PlatformC", String.valueOf(ROBOT_PLATFORM) + "站台");
+//        final int finalI = i;
+//        LeoSpeech.speak(chn[num], new ISpeakListener() {
+//            @Override
+//            public void onSpeakOver(int j) {
+//                count[num]++;
+//                if (count[num] >= 3) {
+//                    has_speech[num] = true;
+//                }
+//                LeoSpeech.setEnglishMode(true);
+//
+//                eng[num] = eng[num].replace("@StartStation", Pinyin.toPinyin(StringUtils.splitString(trainTimeEntities.get(finalI).getStartStation().split("站")[0], "'"), "").toLowerCase());
+//                eng[num] = eng[num].replace("@trid", StringUtils.splitString(trainTimeEntities.get(finalI).getTrainNum()));
+//                eng[num] = eng[num].replace("@TerStation", Pinyin.toPinyin(StringUtils.splitString(trainTimeEntities.get(finalI).getEndStation().split("站")[0], "'"), "").toLowerCase());
+//                eng[num] = eng[num].replace("@LocalStation", Pinyin.toPinyin(StringUtils.splitString(trainTimeEntities.get(finalI).getStationName().split("站")[0], "'"), "").toLowerCase());
+//                eng[num] = eng[num].replace("@PlatformC", "platform " + String.valueOf(ROBOT_PLATFORM));
+//                LeoSpeech.speak(eng[num], null);
+//            }
+//        });
+//    }
 
     @Override
     public void setTrainTime(RobotEntity[] trainTime) {
@@ -407,40 +422,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             boolean has_last = false;
             for (int i = 0; i < trainTimeEntities.size(); i++) {
                 int time = TimeUtils.compareTime(trainTimeEntities.get(i).getDepartureTime());
-                int time2 = TimeUtils.compareTime(trainTimeEntities.get(i).getArriveTime());
-                int time3 = TimeUtils.compareBefore(trainTimeEntities.get(i).getArriveTime(), 3);
-                int time4 = TimeUtils.compareBefore(trainTimeEntities.get(i).getArriveTime(), 1);
-                int time6 = TimeUtils.compareAfter(trainTimeEntities.get(i).getArriveTime(), 1);
-                int time7 = TimeUtils.compareAfter(trainTimeEntities.get(i).getArriveTime(), 2);
-                int time5 = TimeUtils.compareBefore(trainTimeEntities.get(i).getDepartureTime(), 3);
-                if (time5 == 0 && !has_speech[3] && canSpeech && !SpeechTools.isBusy(this)) {
-                    //语音播放
-                    speakTime(i, 3);
+                int train_state = 0;
+                if (trainTimeEntities.get(i).getStationName().equalsIgnoreCase(trainTimeEntities.get(i).getStartStation())) {
+                    train_state = -1;
+                } else if (trainTimeEntities.get(i).getStationName().equalsIgnoreCase(trainTimeEntities.get(i).getStartStation())) {
+                    train_state = 1;
+                } else {
+                    train_state = 0;
                 }
-                if ((time2 == 0 || time6 == 0 || time7 == 0) && !has_speech[0] && canSpeech && !SpeechTools.isBusy(this)) {
-                    //语音播放
-                    speakTime(i, 0);
-                }
-                if (time4 == 0 && !has_speech[2] && canSpeech && !SpeechTools.isBusy(this)) {
-                    //语音播放
-                    speakTime(i, 2);
-                }
-
-                if (time3 == 0 && !has_speech[1] && canSpeech && !SpeechTools.isBusy(this)) {
-                    //语音播放
-                    speakTime(i, 1);
-                }
+                compareAndSpeech.speake(trainTimeEntities.get(i).getArriveTime(), trainTimeEntities.get(i).getDepartureTime(), train_state);
+//                int time2 = TimeUtils.compareTime(trainTimeEntities.get(i).getArriveTime());
+//                int time3 = TimeUtils.compareBefore(trainTimeEntities.get(i).getArriveTime(), 3);
+//                int time4 = TimeUtils.compareBefore(trainTimeEntities.get(i).getArriveTime(), 1);
+//                int time6 = TimeUtils.compareAfter(trainTimeEntities.get(i).getArriveTime(), 1);
+//                int time7 = TimeUtils.compareAfter(trainTimeEntities.get(i).getArriveTime(), 2);
+//                int time5 = TimeUtils.compareBefore(trainTimeEntities.get(i).getDepartureTime(), 3);
+//                if (time5 == 0 && !has_speech[3] && canSpeech && !SpeechTools.isBusy(this)) {
+//                    //语音播放
+//                    speakTime(i, 3);
+//                }
+//                if ((time2 == 0 || time6 == 0 || time7 == 0) && !has_speech[0] && canSpeech && !SpeechTools.isBusy(this)) {
+//                    //语音播放
+//                    speakTime(i, 0);
+//                }
+//                if (time4 == 0 && !has_speech[2] && canSpeech && !SpeechTools.isBusy(this)) {
+//                    //语音播放
+//                    speakTime(i, 2);
+//                }
+//
+//                if (time3 == 0 && !has_speech[1] && canSpeech && !SpeechTools.isBusy(this)) {
+//                    //语音播放
+//                    speakTime(i, 1);
+//                }
 
                 if (time <= 0) {
                     if (choose_num != i) {
-                        has_speech[0] = false;
-                        has_speech[1] = false;
-                        has_speech[2] = false;
-                        has_speech[3] = false;
-                        count[0] = 0;
-                        count[1] = 0;
-                        count[2] = 0;
-                        count[3] = 0;
+                        for (BroadCast broadCast : broadCasts) {
+                            broadCast.setCount(0);
+                        }
+//                        has_speech[0] = false;
+//                        has_speech[1] = false;
+//                        has_speech[2] = false;
+//                        has_speech[3] = false;
+//                        count[0] = 0;
+//                        count[1] = 0;
+//                        count[2] = 0;
+//                        count[3] = 0;
+
                     }
                     has_last = true;
                     choose_num = i;
@@ -453,10 +481,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             trainTimeAdapter.setSelectItem(choose_num);
             trainTimeAdapter.notifyDataSetInvalidated();
-            train_num_id.setText(trainTimeEntities.get(choose_num).getTrainNum());
-            train_station_from.setText(trainTimeEntities.get(choose_num).getStartStation());
-            train_station_to.setText(trainTimeEntities.get(choose_num).getEndStation());
-            station_welcome_text.setText(trainTimeEntities.get(choose_num).getStationName() + "欢迎您");
+            START_STATION = trainTimeEntities.get(choose_num).getStartStation();
+            TRAIN_NUM = trainTimeEntities.get(choose_num).getTrainNum();
+            END_STATION = trainTimeEntities.get(choose_num).getEndStation();
+            STATION_NAME = trainTimeEntities.get(choose_num).getStationName();
+            train_num_id.setText(TRAIN_NUM);
+            train_station_from.setText(START_STATION);
+            train_station_to.setText(END_STATION);
+            station_welcome_text.setText(STATION_NAME + "欢迎您");
             long status = trainTimeEntities.get(choose_num).getStatus();
             if (status == 0) {
                 station_state.setText("正点到达");
@@ -509,9 +541,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onIdleState() {
         Log.e(TAG, "说话结束");
-        speech_state.setText("聆听结束");
-        speech_state.setTextColor(Color.WHITE);
-        speech_state.setTextSize(28);
+        speech_state.setText("");
+//        speech_state.setTextColor(Color.WHITE);
+//        speech_state.setTextSize(28);
 
     }
 
