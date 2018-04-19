@@ -2,12 +2,16 @@ package com.zgty.robotandroid.common;
 
 import android.app.Application;
 import android.net.Uri;
+import android.os.FileObserver;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.TextureView;
 
 import com.facebook.stetho.Stetho;
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.leo.api.LeoRobot;
+import com.leo.api.util.FileUtils;
 import com.zgty.robotandroid.util.LeoSpeech;
 import com.leo.api.abstracts.IResultProcessor;
 import com.leo.api.abstracts.IRobotListener;
@@ -17,6 +21,7 @@ import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
 import com.zgty.robotandroid.business.ResultProcessor;
 import com.zgty.robotandroid.util.SpeechTools;
+import com.zgty.robotandroid.util.StringUtils;
 import com.zgty.robotandroid.util.VolleyRequest;
 
 import java.util.Timer;
@@ -25,10 +30,13 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 
+import static com.zgty.robotandroid.common.Constant.FILE_NAME;
+import static com.zgty.robotandroid.common.Constant.HTTP_HOST;
 import static com.zgty.robotandroid.common.Constant.RED_DIRECTION;
 
 /**
  * Created by zy on 2017/10/20.
+ *
  */
 
 public class RobotApplication extends Application {
@@ -76,15 +84,6 @@ public class RobotApplication extends Application {
                     }, 10000);
 
                 }
-
-//                Timer timer = new Timer();
-//                timer.schedule(new TimerTask() {
-//                    @Override
-//                    public void run() {
-//                        canSpeech = true;
-//                    }
-//                }, 10000);
-
             }
 
             @Override
@@ -143,8 +142,9 @@ public class RobotApplication extends Application {
             }
         });
         Pinyin.init(null);
-
-
+        String http_host = FileUtils.readFileByLines(FILE_NAME).toString().trim();
+        if (!TextUtils.isEmpty(http_host))
+            HTTP_HOST = StringUtils.replaceBlank(http_host);
     }
 
     private void initStetho() {

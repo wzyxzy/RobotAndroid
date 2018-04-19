@@ -45,7 +45,7 @@ public class LeoSpeech {
     private static boolean mIsGuangdonghua = false;
     private static boolean mIsEnglish = false;
     private static boolean mIsCmd = false;
-    private static String PARAM_RECORDING_BASE_TIME = "5000";
+    private static String PARAM_RECORDING_BASE_TIME = "3000";
     private static String PARAM_RECORDING_STOPPING_TIME = "900";
     private static String mVoicerCN = "xiaoyan";
     private static String mVoicerEN = "catherine";

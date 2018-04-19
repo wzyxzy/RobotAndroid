@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RobotAndroid</string>
-    <string name="station_welcome">xx站欢迎您</string>
+    <string name="station_welcome">XX站欢迎您</string>
     <string name="name_train_num">车次</string>
     <string name="train_state_name">状态：</string>
     <string name="train_station_name">站台：</string>
@@ -12,14 +12,4 @@
     <string name="name_startendStation">发/到站</string>
     <string name="choose_train_no">请选择车厢号</string>
     <string name="choose_train_back">返回</string>
-    <string name="station_before1m">工作人员请注意：由@StartStation开往@TerStation方向的@trid次列车停靠在@PlatformC.请做好准备.</string>
-    <string name="station_before1mE">Ladies and gentlemen, Train Number @trid from @StartStation to @TerStation will stop at @PlatformC. Please prepare for the train.</string>
-    <string name="station_before">工作人员、接亲友的同志们请注意：由@StartStation开来的@trid次列车就要到站了，列车停靠@PlatformC，请做好接车准备。</string>
-    <string name="station_beforeE">Ladies and gentlemen, Train Number @trid from @StartStation will arrive at the station. The train stops at @PlatformC. Please get ready for your arrival.</string>
-    <string name="station_after">各位旅客，你们好，由@StartStation开往@TerStation方向的@trid次列车已经到达@LocalStation。您旅途辛苦了，下车时请不要拥挤，请仔细检查自己随身携带物品，不要遗忘在列车上。旅客们下车后，请走在白色安全线以内，下楼梯出站。为确保您的人身安全，请不要钻爬车底或翻越股道，谢谢合作。</string>
-    <string name="station_afterE">Ladies and gentlemen, Train Number @trid from @StartStation has arrived at @LocalStation. Thank you for taking the trip! Please do not push out and make sure you take all your belongings with you when you leave the train. After getting off, please walk inside the safety line to exit through the underpasses. For safety sake, please do not cross the tracks. Thank you!</string>
-    <string name="station_after3m">旅客们！你们好！由@StartStation开往@TerStation的@trid次列车再过三分钟就要开车了，有乘坐@trid次列车的旅客请您抓紧时间上车。</string>
-    <string name="station_after3mE">Dear passengers, your attention please! Train Number @trid from @StartStation to @TerStation will be departing in 3 minutes. Passengers heading for @TerStation direction, please get on board immediately！</string>
-
-
 </resources>

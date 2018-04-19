@@ -29,10 +29,6 @@ public class CompareAndSpeech {
         this.context = context;
     }
 
-    public List<BroadCast> getBroadCasts() {
-        return broadCasts;
-    }
-
     public void setBroadCasts(List<BroadCast> broadCasts) {
         this.broadCasts = broadCasts;
     }
@@ -42,9 +38,9 @@ public class CompareAndSpeech {
             return;
         }
         for (BroadCast broadCast : broadCasts) {
-            if (train_state == 2 || broadCast.getTrain_state() == train_state) {
+            if (broadCast.getTrain_state() == 2 || broadCast.getTrain_state() == train_state) {
                 String compTime = broadCast.getStatus() == 0 ? arrive_time : leave_time;
-                if (TimeUtils.compareAfter(compTime, broadCast.getMinute()) == 0 && broadCast.getCount() < 3 && canSpeech && !SpeechTools.isBusy(context)) {
+                if (TimeUtils.compareAfter(compTime, broadCast.getMinute()) == 0 && canSpeech && !SpeechTools.isBusy(context)) {
                     speakTime(broadCast);
                 }
             }
@@ -64,9 +60,6 @@ public class CompareAndSpeech {
         LeoSpeech.speak(chn, new ISpeakListener() {
             @Override
             public void onSpeakOver(int j) {
-                int count = broadCast.getCount();
-                count++;
-                broadCast.setCount(count);
                 LeoSpeech.setEnglishMode(true);
 
                 eng[0] = eng[0].replace("@StartStation", Pinyin.toPinyin(StringUtils.splitString(START_STATION.split("站")[0], "'"), "").toLowerCase());

@@ -8,7 +8,6 @@ public class BroadCast {
     private int minute;
     private int status;
     private String contentEnglish;
-    private int count;
 
     public int getId() {
         return id;
@@ -58,11 +57,4 @@ public class BroadCast {
         this.contentEnglish = contentEnglish;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }

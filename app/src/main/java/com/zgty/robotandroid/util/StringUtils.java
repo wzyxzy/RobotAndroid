@@ -10,6 +10,9 @@ import android.telephony.TelephonyManager;
 
 import com.zgty.robotandroid.common.RobotApplication;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by zy on 2018/4/11.
  */
@@ -24,6 +27,17 @@ public class StringUtils {
 
         }
         return result.toString();
+    }
+
+
+    public static String replaceBlank(String str) {
+        String dest = "";
+        if (str != null) {
+            Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+            Matcher m = p.matcher(str);
+            dest = m.replaceAll("");
+        }
+        return dest;
     }
 
     public static String splitString(String s, String split) {

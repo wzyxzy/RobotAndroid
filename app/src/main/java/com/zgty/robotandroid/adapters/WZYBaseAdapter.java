@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.zgty.robotandroid.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,11 +21,13 @@ public abstract class WZYBaseAdapter<T> extends BaseAdapter {
     private List<T> data;
     //布局导入器
     private LayoutInflater inflater;
+    private Context context;
     //布局id
     private int layoutRes;
 
     public WZYBaseAdapter(List<T> data, Context context, int layoutRes) {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.context = context;
         this.layoutRes = layoutRes;
         if (data == null) {
             //如果传递进来的数据源是null,我们就实例化一个size为0的数据源
@@ -103,7 +107,7 @@ public abstract class WZYBaseAdapter<T> extends BaseAdapter {
 
         if (canChangeBac){
             if (position == selectItem) {
-                convertView.setBackgroundColor(Color.YELLOW);
+                convertView.setBackgroundColor(context.getResources().getColor(R.color.green_blue));
             } else {
                 convertView.setBackgroundColor(Color.TRANSPARENT);
             }

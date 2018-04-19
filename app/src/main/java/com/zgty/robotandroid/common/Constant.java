@@ -1,5 +1,7 @@
 package com.zgty.robotandroid.common;
 
+import android.os.Environment;
+
 import com.zgty.robotandroid.R;
 
 /**
@@ -7,13 +9,14 @@ import com.zgty.robotandroid.R;
  */
 
 public class Constant {
-    public static final String HTTP_HOST = "http://192.168.18.77:8080/StationRobot/";//主网址
+    public static String HTTP_HOST = "http://192.168.18.77:8080/StationRobot/";//主网址
+    public static final String FILE_NAME = Environment.getExternalStorageDirectory() + "/robot/http_host";//获取http_host的网址
     public static final String BROADCASTACTIONLIST = "com.zgty.robotlist";//刷新list广播
-    public static final int BROADCASTLISTTIME = 2000;//刷新list频率
+    public static int BROADCASTLISTTIME = 10000;//刷新list频率
     public static final String BROADCASTACTIONBROADCAST = "com.zgty.broadcast";//刷新广播词的广播
-    public static final int BROADCASTBROADCAST = 30000;//刷新广播词频率
+    public static int BROADCASTBROADCAST = 60000;//刷新广播词频率
     public static final String BROADCASTACTIONINFO = "com.zgty.robotinfo";//刷新info广播
-    public static final int BROADCASTINFOTIME = 10000;//刷新info频率
+    public static int BROADCASTINFOTIME = 100000;//刷新info频率
     public static final String SERVICE_INTENT_INFO = "SERVICE_INTENT_INFO";//传递service名字
     public static final String SERVICE_INTENT_LIST = "SERVICE_INTENT_LIST";//传递service名字
     public static final String SERVICE_INTENT_BROAD = "SERVICE_INTENT_BROAD";//传递service名字

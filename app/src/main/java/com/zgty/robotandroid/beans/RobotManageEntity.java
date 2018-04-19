@@ -18,6 +18,9 @@ public class RobotManageEntity {
     private String direction;//方向
     private int platform;//站台
     private int redDirection;// 红外距离
+    private int broadFresh;// 广播更新频率
+    private int listFresh;// 列表更新频率
+    private int infoFresh;// 机器人管理更新频率
 
     public int getIds() {
         return ids;
@@ -33,6 +36,14 @@ public class RobotManageEntity {
 
     public void setCurTrainNo(String curTrainNo) {
         this.curTrainNo = curTrainNo;
+    }
+
+    public String getLastTrainNo() {
+        return lastTrainNo;
+    }
+
+    public void setLastTrainNo(String lastTrainNo) {
+        this.lastTrainNo = lastTrainNo;
     }
 
     public String getDirection() {
@@ -51,20 +62,36 @@ public class RobotManageEntity {
         this.platform = platform;
     }
 
-    public String getLastTrainNo() {
-        return lastTrainNo;
-    }
-
-    public void setLastTrainNo(String lastTrainNo) {
-        this.lastTrainNo = lastTrainNo;
-    }
-
     public int getRedDirection() {
         return redDirection;
     }
 
     public void setRedDirection(int redDirection) {
         this.redDirection = redDirection;
+    }
+
+    public int getBroadFresh() {
+        return broadFresh;
+    }
+
+    public void setBroadFresh(int broadFresh) {
+        this.broadFresh = broadFresh;
+    }
+
+    public int getListFresh() {
+        return listFresh;
+    }
+
+    public void setListFresh(int listFresh) {
+        this.listFresh = listFresh;
+    }
+
+    public int getInfoFresh() {
+        return infoFresh;
+    }
+
+    public void setInfoFresh(int infoFresh) {
+        this.infoFresh = infoFresh;
     }
 
     @Override
@@ -76,6 +103,9 @@ public class RobotManageEntity {
                 ", direction='" + direction + '\'' +
                 ", platform=" + platform +
                 ", redDirection=" + redDirection +
+                ", broadFresh=" + broadFresh +
+                ", listFresh=" + listFresh +
+                ", infoFresh=" + infoFresh +
                 '}';
     }
 }
