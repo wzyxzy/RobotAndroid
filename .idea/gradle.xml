@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/aiuiChat" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/demoTest2" />
             <option value="$PROJECT_DIR$/mscV5PlusDemo" />

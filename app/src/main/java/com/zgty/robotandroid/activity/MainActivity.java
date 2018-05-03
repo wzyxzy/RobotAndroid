@@ -22,39 +22,31 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.github.promeg.pinyinhelper.Pinyin;
-import com.leo.api.LeoRobot;
-import com.leo.api.abstracts.ISpeakListener;
-import com.leo.api.socket.SimpleCommand;
-import com.zgty.robotandroid.beans.BroadCast;
-import com.zgty.robotandroid.presenter.BroadCastPresenter;
-import com.zgty.robotandroid.presenter.BroadCastPresenterImpl;
-import com.zgty.robotandroid.util.CompareAndSpeech;
-import com.zgty.robotandroid.util.FucUtil;
-import com.zgty.robotandroid.util.LeoSpeech;
 import com.leo.api.abstracts.IViewActionListener;
 import com.leo.api.abstracts.IViewUpdater;
 import com.zgty.robotandroid.R;
 import com.zgty.robotandroid.adapters.TrainTimeAdapter;
+import com.zgty.robotandroid.beans.BroadCast;
 import com.zgty.robotandroid.beans.RobotEntity;
 import com.zgty.robotandroid.beans.RobotManageEntity;
 import com.zgty.robotandroid.beans.TrainInfoEntity;
 import com.zgty.robotandroid.business.ResultProcessor;
 import com.zgty.robotandroid.common.Constant;
+import com.zgty.robotandroid.presenter.BroadCastPresenter;
+import com.zgty.robotandroid.presenter.BroadCastPresenterImpl;
 import com.zgty.robotandroid.presenter.TrainInfoPresenter;
 import com.zgty.robotandroid.presenter.TrainInfoPresenterImpl;
 import com.zgty.robotandroid.presenter.TrainTimePresenter;
 import com.zgty.robotandroid.presenter.TrainTimePresenterImpl;
 import com.zgty.robotandroid.service.RefreshService;
 import com.zgty.robotandroid.service.RobotService;
-import com.zgty.robotandroid.util.SpeechTools;
+import com.zgty.robotandroid.util.CompareAndSpeech;
+import com.zgty.robotandroid.util.LeoSpeech;
 import com.zgty.robotandroid.util.StringUtils;
 import com.zgty.robotandroid.util.TimeUtils;
-import com.zgty.robotandroid.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
@@ -73,7 +65,6 @@ import static com.zgty.robotandroid.common.Constant.ROBOT_PLATFORM;
 import static com.zgty.robotandroid.common.Constant.START_STATION;
 import static com.zgty.robotandroid.common.Constant.STATION_NAME;
 import static com.zgty.robotandroid.common.Constant.TRAIN_NUM;
-import static com.zgty.robotandroid.common.RobotApplication.canSpeech;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, TrainInfoView, TrainTimeView, BroadCastInfo, IViewUpdater {
 
@@ -195,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         filter.addAction(Constant.BROADCASTACTIONBROADCAST);
         registerReceiver(listBroadCast, filter);
 
+
     }
 
     private void initView() {
@@ -221,17 +213,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public static byte[] form_eye_pack(int red, int green, int blue) {
-        byte[] mDataPackage = new byte[]{-1, -1, 65, 5, 6, (byte) red, (byte) green, (byte) blue, 0};
-        int chkData = 0;
-
-        for (int i = 2; i <= 7; ++i) {
-            chkData += mDataPackage[i];
-        }
-
-        mDataPackage[8] = (byte) (~chkData & 255);
-        return mDataPackage;
-    }
+//    public static byte[] form_eye_pack(int red, int green, int blue) {
+//        byte[] mDataPackage = new byte[]{-1, -1, 65, 5, 6, (byte) red, (byte) green, (byte) blue, 0};
+//        int chkData = 0;
+//
+//        for (int i = 2; i <= 7; ++i) {
+//            chkData += mDataPackage[i];
+//        }
+//
+//        mDataPackage[8] = (byte) (~chkData & 255);
+//        return mDataPackage;
+//    }
 
     @Override
     protected void onResume() {

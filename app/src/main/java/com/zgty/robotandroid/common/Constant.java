@@ -6,10 +6,11 @@ import com.zgty.robotandroid.R;
 
 /**
  * Created by zy on 2017/10/23.
+ *
  */
 
 public class Constant {
-    public static String HTTP_HOST = "http://192.168.18.77:8080/StationRobot/";//主网址
+    public static String HTTP_HOST = "http://192.168.18.220:8080/StationRobot/";//主网址
     public static final String FILE_NAME = Environment.getExternalStorageDirectory() + "/robot/http_host";//获取http_host的网址
     public static final String BROADCASTACTIONLIST = "com.zgty.robotlist";//刷新list广播
     public static int BROADCASTLISTTIME = 10000;//刷新list频率
@@ -34,4 +35,5 @@ public class Constant {
     public static String STATION_NAME = "北京站";//当前站
     public static String TRAIN_NUM = "T123";//当前车次
     public static int RED_DIRECTION = 40;//当前红外线距离
+    public static boolean useLocalRecongnise = true;//讯飞语音是否使用离线识别
 }

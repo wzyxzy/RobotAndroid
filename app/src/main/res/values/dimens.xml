@@ -7,7 +7,7 @@
     <dimen name="activity_main_right_item">25dp</dimen>
     <dimen name="activity_main_text_size">16sp</dimen>
     <dimen name="activity_item_text_size">10sp</dimen>
-    <dimen name="activity_speech_text_size">12sp</dimen>
+    <dimen name="activity_speech_text_size">15sp</dimen>
     <dimen name="activity_main_text_size_large">18sp</dimen>
     <dimen name="activity_choose_width">600dp</dimen>
     <dimen name="activity_choose_height">200dp</dimen>

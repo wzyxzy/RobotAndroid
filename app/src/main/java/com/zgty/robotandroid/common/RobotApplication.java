@@ -33,10 +33,10 @@ import okhttp3.OkHttpClient;
 import static com.zgty.robotandroid.common.Constant.FILE_NAME;
 import static com.zgty.robotandroid.common.Constant.HTTP_HOST;
 import static com.zgty.robotandroid.common.Constant.RED_DIRECTION;
+import static com.zgty.robotandroid.common.Constant.useLocalRecongnise;
 
 /**
  * Created by zy on 2017/10/20.
- *
  */
 
 public class RobotApplication extends Application {
@@ -75,7 +75,12 @@ public class RobotApplication extends Application {
                     }
                     canSpeech = false;
                     LeoSpeech.setEnglishMode(false);
-                    SpeechTools.speakAndRestartRecognize("您去几车厢？");
+                    if (useLocalRecongnise) {
+                        SpeechTools.speakAndRestartRecognize("您去几车厢？");
+                    } else {
+                        SpeechTools.speakAndRestartRecognize("需要什么帮助吗？");
+                    }
+
                     new Handler().postDelayed(new Runnable() {
                         public void run() {
                             //execute the task

@@ -5,17 +5,15 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.github.promeg.pinyinhelper.Pinyin;
-import com.leo.api.LeoRobot;
 import com.zgty.robotandroid.util.LeoSpeech;
 import com.leo.api.abstracts.IResultProcessor;
 import com.leo.api.nlp.NLPResult;
-import com.leo.api.processor.MessageType;
 import com.leo.api.util.Logs;
-import com.zgty.robotandroid.R;
 import com.zgty.robotandroid.common.Constant;
-import com.zgty.robotandroid.util.SpeechTools;
+import com.zgty.robotandroid.util.IbotUtils;
 
-import java.util.ArrayList;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 /**
  * 识别结果/出错 处理
@@ -119,7 +117,6 @@ public class ResultProcessor implements IResultProcessor {
 
         Log.d(TAG, "result =" + result);
         if (TextUtils.isEmpty(result)) {
-            reset();
             return;
         }
         onVoiceListener.onWords(result);
@@ -143,8 +140,7 @@ public class ResultProcessor implements IResultProcessor {
 //            num = pinyin.split("CE")[0];
         }
         if (TextUtils.isEmpty(num)) {
-            reset();
-            return;
+            iBot(result);
         } else {
 
             if (num.contains("2|0") || num.contains("ER|SHI") || num.contains("ER|SI")) {
@@ -197,14 +193,27 @@ public class ResultProcessor implements IResultProcessor {
 
             } else {
 
-                reset();
+                iBot(result);
             }
 
         }
 
     }
 
-    public void reset() {
+    private void iBot(final String result) {
+
+        Runnable downloadRun = new Runnable(){
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                String a = IbotUtils.askIBot(result);
+
+                LeoSpeech.speak(a, null);
+
+            }
+        };
+        new Thread(downloadRun).start();
 
 //        if (LeoRobot.repeat_count<=3){
 //            LeoRobot.repeat_count++;
@@ -218,6 +227,11 @@ public class ResultProcessor implements IResultProcessor {
 
     public boolean isBusy() {
         return mIsBusy;
+    }
+
+    @Override
+    public void reset() {
+
     }
 
     @Override

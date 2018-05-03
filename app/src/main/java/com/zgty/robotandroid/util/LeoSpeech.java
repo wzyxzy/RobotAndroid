@@ -15,6 +15,7 @@ import android.util.Log;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.GrammarListener;
 import com.iflytek.cloud.InitListener;
+import com.iflytek.cloud.LexiconListener;
 import com.iflytek.cloud.RecognizerListener;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
@@ -34,6 +35,8 @@ import java.util.Locale;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static com.zgty.robotandroid.common.Constant.useLocalRecongnise;
 
 
 public class LeoSpeech {
@@ -152,10 +155,45 @@ public class LeoSpeech {
         // 设置资源路径
         mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
         int ret = mRecognizer.buildGrammar("bnf", mLocalGrammar, grammarListener);
+//        mRecognizer.updateLexicon()
         if (ret != ErrorCode.SUCCESS) {
             Log.e("makeGrammar", "语法构建失败,错误码：" + ret);
         }
     }
+
+    public static void updateGrammar(String contents) {
+        mRecognizer.setParameter(SpeechConstant.PARAMS, null);
+        // 设置引擎类型
+        mRecognizer.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_LOCAL);
+        // 设置资源路径
+        mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
+        //使用8k音频的时候请解开注释
+//				mRecognizer.setParameter(SpeechConstant.SAMPLE_RATE, "8000");
+        // 设置语法构建路径
+        mRecognizer.setParameter(ResourceUtil.GRM_BUILD_PATH, GRAMMAR_PATH);
+        // 设置语法名称
+        mRecognizer.setParameter(SpeechConstant.GRAMMAR_LIST, "zgty");
+        // 设置文本编码格式
+        mRecognizer.setParameter(SpeechConstant.TEXT_ENCODING, "utf-8");
+        int ret = mRecognizer.updateLexicon("contact", contents, lexiconListener);
+        if (ret != ErrorCode.SUCCESS) {
+            Log.d("updateGrammar", "更新词典失败,错误码：" + ret);
+        }
+    }
+
+    /**
+     * 更新词典监听器。
+     */
+    private static LexiconListener lexiconListener = new LexiconListener() {
+        @Override
+        public void onLexiconUpdated(String lexiconId, SpeechError error) {
+            if (error == null) {
+                Log.d("updateGrammar", "词典更新成功");
+            } else {
+                Log.d("updateGrammar", "词典更新失败,错误码：" + error.getErrorCode());
+            }
+        }
+    };
 
     public static void release() {
         mRecognizer.destroy();
@@ -260,22 +298,25 @@ public class LeoSpeech {
 
     private static void setRecongizeParam() {
         mRecognizer.setParameter("params", (String) null);
-//        mRecognizer.setParameter("engine_type", "cloud");
-        mRecognizer.setParameter("engine_type", "mixed");
-        mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
-        // 设置语法构建路径
-        mRecognizer.setParameter(ResourceUtil.GRM_BUILD_PATH, GRAMMAR_PATH);
-        mRecognizer.setParameter("result_type", "json");
-        // 设置本地识别使用语法id
-        mRecognizer.setParameter(SpeechConstant.LOCAL_GRAMMAR, "zgty");
-        // 设置识别的门限值
-        mRecognizer.setParameter(SpeechConstant.MIXED_THRESHOLD, "60");
+        if (useLocalRecongnise) {
+            mRecognizer.setParameter("engine_type", "mixed");
+            mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
+            // 设置语法构建路径
+            mRecognizer.setParameter(ResourceUtil.GRM_BUILD_PATH, GRAMMAR_PATH);
+            // 设置本地识别使用语法id
+            mRecognizer.setParameter(SpeechConstant.LOCAL_GRAMMAR, "zgty");
+            // 设置识别的门限值
+            mRecognizer.setParameter(SpeechConstant.MIXED_THRESHOLD, "60");
 //        // 使用8k音频的时候请解开注释
 //        // mAsr.setParameter(SpeechConstant.SAMPLE_RATE, "8000");
-        mRecognizer.setParameter(SpeechConstant.DOMAIN, "iat");
-        mRecognizer.setParameter(SpeechConstant.NLP_VERSION, "2.0");
-        mRecognizer.setParameter("asr_sch", "1");
-        // mAsr.setParameter(SpeechConstant.RESULT_TYPE, "json");
+            mRecognizer.setParameter(SpeechConstant.DOMAIN, "iat");
+            mRecognizer.setParameter(SpeechConstant.NLP_VERSION, "2.0");
+            mRecognizer.setParameter("asr_sch", "1");
+
+        } else {
+            mRecognizer.setParameter("engine_type", "cloud");
+        }
+        mRecognizer.setParameter("result_type", "json");
         if (mIsEnglish) {
             mRecognizer.setParameter("language", "en_us");
             mRecognizer.setParameter("accent", (String) null);

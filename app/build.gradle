@@ -1,12 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+//    greendao {
+//        schemaVersion 1
+//        targetGenDir 'src/main/java'
+//    }
     defaultConfig {
         applicationId "com.zgty.robotandroid"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,10 +28,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:appcompat-v7:27.+'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0'
     compile 'com.facebook.stetho:stetho:1.5.0'
-    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.google.code.gson:gson:2.8.2'
     compile 'com.squareup.picasso:picasso:2.3.2'
     compile 'com.lzy.net:okgo:3.0.4'
     compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
@@ -43,4 +47,9 @@ dependencies {
     implementation files('libs/agora-rtc-sdk.jar')
     implementation files('libs/yunba-sdk-release1.8.5.jar')
     implementation files('libs/ZCSComboV2.6.1.jar')
+    implementation files('libs/robot-cloud-asksdk-1.0.jar')
+    implementation files('libs/apache-commons-lang.jar')
+    implementation files('libs/commons-httpclient-3.1.jar')
+    implementation files('libs/commons-logging-1.1.1.jar')
+    implementation files('libs/commons-codec-1.3.jar')
 }

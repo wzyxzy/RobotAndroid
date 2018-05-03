@@ -5,8 +5,10 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import com.zgty.robotandroid.common.RobotApplication;
 
@@ -68,6 +70,9 @@ public class StringUtils {
             return "";
         } else {
             String imei = mTm.getDeviceId();
+            String ANDROID_ID = Settings.System.getString(context.getContentResolver(), Settings.System.ANDROID_ID);
+            Log.d("找个稳定的_imei",imei);
+            Log.d("找个稳定的_ANDROID_ID",ANDROID_ID);
             return imei;
         }
 
