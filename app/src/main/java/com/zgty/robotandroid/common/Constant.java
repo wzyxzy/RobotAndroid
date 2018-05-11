@@ -35,5 +35,5 @@ public class Constant {
     public static String STATION_NAME = "北京站";//当前站
     public static String TRAIN_NUM = "T123";//当前车次
     public static int RED_DIRECTION = 40;//当前红外线距离
-    public static boolean useLocalRecongnise = true;//讯飞语音是否使用离线识别
+    public static boolean useLocalRecongnise = false;//讯飞语音是否使用离线识别
 }

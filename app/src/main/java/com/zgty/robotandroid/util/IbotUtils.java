@@ -23,7 +23,7 @@ public class IbotUtils {
         // TODO Auto-generated method stub
         //智能问答
         AskRequest askRequest = new AskRequest(appKey, appSecret, askWords,
-                Constant.PRIMARY_TYPE, null, Constant.CUSTOM_PLATFORM);
+                Constant.PRIMARY_TYPE, null, Constant.WEIXIN_PLATFORM);
         AskService askService = CloudServiceFactory.getInstance()
                 .createAskService();
         askService.init(null);

@@ -77,8 +77,8 @@ public class LeoSpeech {
     public static void init(Context context, IResultProcessor processor) {
         mContext = context;
         mIsEnglish = !isZh(mContext);
-        SpeechUtility.createUtility(mContext.getApplicationContext(), "appid=5ac1a294");
-//        SpeechUtility.createUtility(context.getApplicationContext(), "appid=5a705940");
+//        SpeechUtility.createUtility(mContext.getApplicationContext(), "appid=599fc82b");
+        SpeechUtility.createUtility(context.getApplicationContext(), "appid=5a705940");
         mRecognizer = SpeechRecognizer.createRecognizer(mContext, mInitListener);
         mTts = SpeechSynthesizer.createSynthesizer(mContext, mInitListener);
         mResultProcessor = processor;

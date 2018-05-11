@@ -202,13 +202,15 @@ public class ResultProcessor implements IResultProcessor {
 
     private void iBot(final String result) {
 
-        Runnable downloadRun = new Runnable(){
+        Runnable downloadRun = new Runnable() {
 
             @Override
             public void run() {
                 // TODO Auto-generated method stub
                 String a = IbotUtils.askIBot(result);
-
+                a = a.replaceAll("\\[link url='http://politics.people.com.cn/n1/+[a-zA-Z0-9/\\-]+.html']", "");
+                a = a.replaceAll("\\[/link]", "。");
+                Log.d("answer2", a);
                 LeoSpeech.speak(a, null);
 
             }
