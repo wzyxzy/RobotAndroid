@@ -24,23 +24,23 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:27.+'
-    compile 'com.android.support.constraint:constraint-layout:1.1.0'
-    compile 'com.facebook.stetho:stetho:1.5.0'
-    compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.squareup.picasso:picasso:2.3.2'
-    compile 'com.lzy.net:okgo:3.0.4'
-    compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
-    compile 'com.github.promeg:tinypinyin:2.0.3'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'com.github.promeg:tinypinyin:2.0.3'
     // TinyPinyin核心包，约80KB
-    compile 'com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3'
+    implementation 'com.github.promeg:tinypinyin-lexicons-android-cncity:2.0.3'
 
     // 可选，适用于Android的中国地区词典
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     implementation files('libs/leorobotb1.jar')
     implementation files('libs/Msc.jar')
     implementation files('libs/Sunflower.jar')

@@ -77,16 +77,7 @@
 
         <service android:name=".service.RobotService" />
 
-        <receiver
-            android:name=".business.BootReceiver"
-            android:enabled="true"
-            android:exported="true"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.HOME" />
-            </intent-filter>
-        </receiver>
+
     </application>
 
 </manifest>

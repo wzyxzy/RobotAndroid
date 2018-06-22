@@ -13,20 +13,12 @@ public class BootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
-        if (intent.getAction().equals(ACTION)) {
-            Intent newIntent = new Intent(context, MainActivity.class);
-//            //后边的XXX.class就是要启动的服务
-//            Intent service = new Intent(context,AutoStartService.class);
-//            context.startService(service);
+//        if (intent.getAction().equals(ACTION)) {
+//            Intent newIntent = new Intent(context, MainActivity.class);
 //
-//            // 启动应用，参数为需要自动启动的应用的包名，只是启动app的activity的包名
-//            Intent newIntent = context.getPackageManager()
-//                    .getLaunchIntentForPackage("com.example.autostart");
+//            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //            context.startActivity(newIntent);
-            newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(newIntent);
-        }
+//        }
 
     }
 }

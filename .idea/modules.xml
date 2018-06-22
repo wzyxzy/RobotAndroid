@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/aiuiChat/aiuiChat.iml" filepath="$PROJECT_DIR$/aiuiChat/aiuiChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/demoTest2/demoTest2.iml" filepath="$PROJECT_DIR$/demoTest2/demoTest2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mFVDemo/mFVDemo.iml" filepath="$PROJECT_DIR$/mFVDemo/mFVDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mscV5PlusDemo/mscV5PlusDemo2.iml" filepath="$PROJECT_DIR$/mscV5PlusDemo/mscV5PlusDemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/speechDemo/speechDemo.iml" filepath="$PROJECT_DIR$/speechDemo/speechDemo.iml" />
     </modules>
   </component>
 </project>

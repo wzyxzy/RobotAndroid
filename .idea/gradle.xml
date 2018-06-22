@@ -11,7 +11,9 @@
             <option value="$PROJECT_DIR$/aiuiChat" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/demoTest2" />
+            <option value="$PROJECT_DIR$/mFVDemo" />
             <option value="$PROJECT_DIR$/mscV5PlusDemo" />
+            <option value="$PROJECT_DIR$/speechDemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
