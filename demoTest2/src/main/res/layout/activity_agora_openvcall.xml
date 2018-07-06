@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_openvcall_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mic_inactive"
+    >
+    
+	<FrameLayout 
+	    android:id="@+id/activity_openvcall_view_container"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:visibility="gone"
+	    />
+	<Button 
+        android:id="@+id/addVolume"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/jia_background"
+        />
+    <Button 
+        android:id="@+id/reduceVolume"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/addVolume"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/jian_background"
+        />
+	<Button
+        android:id="@+id/agora_backPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="143dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backbutton"
+        />
+</RelativeLayout>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+<play>/mnt/sdcard/leotech/lesson_feel/The_opening_music.mp3</play>
+<ask>
+	<tip>feel1|/mnt/sdcard/leotech/lesson_feel/start_feel.mp3</tip>
+	<save>woshou|/mnt/sdcard/leotech/lesson_feel/hello.mp3</save>
+	<exit name="no">/mnt/sdcard/leotech/lesson_feel/oh_no.mp3</exit>
+	<wrong>feel2|/mnt/sdcard/leotech/lesson_feel/name_wrong.mp3</wrong>
+	<wrong>feel3|/mnt/sdcard/leotech/lesson_feel/name_wrong2.mp3</wrong>
+	<count name="3">/mnt/sdcard/leotech/lesson_feel/oh_no.mp3</count>
+</ask>
+
+<play>/mnt/sdcard/leotech/lesson_feel/feel1.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/feel2.mp3</play>
+
+<play>/mnt/sdcard/leotech/lesson_feel/sometimes_i_feel.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/scared.mp3</play>
+<play>scared|/mnt/sdcard/leotech/lesson_feel/scared_music.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/scared_end.mp3</play>
+
+<play>/mnt/sdcard/leotech/lesson_feel/sometimes_i_feel.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/happy.mp3</play>
+<play>happy|/mnt/sdcard/leotech/lesson_feel/happy_music.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/happy_end.mp3</play>
+
+<play>/mnt/sdcard/leotech/lesson_feel/sometimes_i_feel.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/sad.mp3</play>
+<play>sad|/mnt/sdcard/leotech/lesson_feel/sad_music.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/sad_end.mp3</play>
+
+<play>/mnt/sdcard/leotech/lesson_feel/sometimes_i_feel.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/angry.mp3</play>
+<play>angry|/mnt/sdcard/leotech/lesson_feel/angry_music.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/angry_end.mp3</play>
+
+<play>/mnt/sdcard/leotech/lesson_feel/sometimes_i_feel.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/bored.mp3</play>
+<play>bored|/mnt/sdcard/leotech/lesson_feel/bored_music.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/bored_end.mp3</play>
+
+<play>/mnt/sdcard/leotech/lesson_feel/feel3.mp3</play>
+<play>以上就是今天所学的内容</play>

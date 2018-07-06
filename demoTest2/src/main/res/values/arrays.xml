@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+    <string-array name="pronunciation_name">
+        <item>默认(女 普通，离线)</item>
+        <item>小燕(女 普通，离线)</item>
+        <item>晓峰(男 普通，离线)</item>
+        <item>楠楠(女童 普通，离线)</item>
+        <item>小里奥(男童 普通，离线)</item>
+        <item>小坤(男 河南，离线)</item>
+        <item>晓琳(女 台湾，离线)</item>
+        <item>晓美(女 粤语，离线)</item>
+        <item>小倩(女 东北，离线)</item>
+        <item>小强(男 湖南，离线)</item>
+        <item>晓蓉(女 四川，离线)</item>
+        
+        <item>小琪(女 普通，在线)</item>
+        <item>老孙(男 普通，在线)</item>
+        <item>许久(男 普通，在线)</item>
+        <item>小萍(女 普通，在线)</item>
+        <item>小筠(女 普通，在线)</item>
+        <item>小婧(女 普通，在线)</item>
+        <item>叶芳(女 普通，在线)</item>
+        <item>小梦(女 普通，在线)</item>
+        <item>小春(女 普通，在线)</item>
+        <item>子琪(女 普通，在线)</item>
+        <item>许多(男 普通，在线)</item>
+        <item>小新(男 动漫，在线)</item>
+        <item>小丸子(女 动漫，在线)</item>
+    </string-array>
+    <string-array name="pronunciation_value">
+    	<item>0</item>
+        <item>3</item>
+        <item>4</item>
+        <item>7</item>
+        <item>55</item>
+        <item>25</item>
+        <item>22</item>
+        <item>15</item>
+        <item>11</item>
+        <item>24</item>
+        <item>14</item>
+        
+        <item>xiaoqi</item>
+        <item>vils</item>
+        <item>aisjiuxu</item>
+        <item>aisxping</item>
+        <item>aisjying</item>
+        <item>aisjinger</item>
+        <item>yefang</item>
+        <item>aisxmeng</item>
+        <item>aismengchun</item>
+        <item>ziqi</item>
+        <item>aisduoxu</item>
+        <item>xiaoxin</item>
+        <item>xiaowanzi</item>
+    </string-array>
+
+</resources>

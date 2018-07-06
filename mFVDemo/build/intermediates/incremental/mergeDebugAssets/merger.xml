@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\android_project\RobotAndroid\mFVDemo\src\main\assets"><file name="fonts/zzgf_yuehei.otf" path="D:\android_project\RobotAndroid\mFVDemo\src\main\assets\fonts\zzgf_yuehei.otf"/></source><source path="D:\android_project\RobotAndroid\mFVDemo\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\android_project\RobotAndroid\mFVDemo\src\debug\assets"/></dataSet></merger>

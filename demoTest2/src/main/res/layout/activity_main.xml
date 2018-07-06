@@ -1,0 +1,756 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="20dp"
+    android:gravity="left"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="语音类测试：    "/>
+        <EditText
+            android:id="@+id/et_speak"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="hello world"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_speak"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="说话"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_Pronunciation"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="发音人"
+            android:visibility="gone"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_rcgn"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="启动识别"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_stop_reg"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止识别"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_status"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="状态"
+            android:textSize="22sp" /> 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="舵机类测试：    "/>        
+        <Button
+            android:id="@+id/btn_diantou"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="点头"
+            android:textSize="22sp" />   
+        <Button
+            android:id="@+id/btn_yaotou"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="摇头"
+            android:textSize="22sp" />    
+        <Button
+            android:id="@+id/btn_left_pls"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="左请"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_right_pls"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="右请"
+            android:textSize="22sp" />   
+        <Button
+            android:id="@+id/btn_dance"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="舞蹈"
+            android:textSize="22sp" />     
+        <Button
+            android:id="@+id/btn_action_stop"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止动作"
+            android:textSize="22sp" />   
+         <Button
+            android:id="@+id/btn_dance_stop"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止跳舞"
+            android:textSize="22sp" />                                                          
+        <EditText
+            android:id="@+id/et_action"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLength="16"
+            android:text="left"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="动作"
+            android:textSize="22sp" />            
+        <Button
+            android:id="@+id/btn_remote_video"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="远程视频"
+            android:visibility="gone"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_video_para"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="视频参数"
+            android:visibility="gone"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="底盘类测试：    "/>  
+        <Button
+            android:id="@+id/btn_forward"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="前进"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_backward"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="后退"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="左转"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_right"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="右转"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_blue_addr"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:hint="请输入蓝牙设备地址"
+            android:visibility="gone"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_blue_ok"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="保存蓝牙地址"
+            android:visibility="gone"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="导航类测试：    "/>  
+        <EditText
+            android:id="@+id/et_nav"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="迎宾区"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_nav"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="开始导航"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_nav_stop1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止导航"
+            android:textSize="22sp" />        
+        <Button
+            android:id="@+id/btn_start_roaming"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="开始漫游"
+            android:visibility="gone"
+            android:textSize="22sp" />
+         <Button
+            android:id="@+id/btn_face"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="转向"
+            android:visibility="gone"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="导航类测试：    "/>  
+        <EditText
+            android:id="@+id/et_nav2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="理财区"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_nav2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="开始导航"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_nav_stop2"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止导航"
+            android:textSize="22sp" />        
+        <Button
+            android:id="@+id/btn_stop_roaming"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止漫游"
+            android:visibility="gone"
+            android:textSize="22sp" />
+         <Button
+            android:id="@+id/btn_face1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="转向"
+            android:visibility="gone"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="打印机测试：    "/>  
+        <EditText
+            android:id="@+id/et_print"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLength="8"
+            android:text="中国人民银行"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_print"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="打印文字"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_print_pic"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="打印图形"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_huanhang"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="换行"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_cut"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="切纸"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="灯光类测试：    "/>
+        <Button
+            android:id="@+id/btn_mouth_on"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="嘴灯亮"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_mouth_off"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="嘴灯灭"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_eyes_on"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="眼灯亮"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_eyes_off"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="眼灯灭"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_positive_rotate"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="转圈"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_negative_rotate"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:visibility="gone"
+            android:text="反向转圈"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_eyes_blink"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="眨眼"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_eyes_red"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="红"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_eyes_green"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="绿"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_eyes_blue"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="蓝"
+            android:textSize="22sp" />
+        <Button
+            android:id="@+id/btn_eyes_hun"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="混"
+            android:visibility="gone"
+            android:textSize="22sp" /> 
+        <Button
+            android:id="@+id/btn_eyes_default"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="默认"
+            android:textSize="22sp" />       
+        <Button
+            android:id="@+id/btn_eyes_cancel"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="取消"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="读卡器测试：    "/>
+        <Button
+            android:id="@+id/btn_touch"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="接触IC卡"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_untouch"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="感应IC卡"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_identy"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="身份证"
+            android:textSize="22sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="充电类测试：    "/>
+        <Button
+            android:id="@+id/btn_nav_charge"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="导航充电"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_station_charge"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="充电桩充电"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_stop_charge"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="停止充电"
+            android:textSize="22sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="传感器测试：    "/>  
+        <Button
+            android:id="@+id/btn_elect"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="电量"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_distance"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="距离"
+            android:textSize="22sp" />
+    </LinearLayout>    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="22sp"
+	        android:gravity="center"
+            android:text="校准类工具：   "/>  
+        <EditText
+            android:id="@+id/et_tranparent"
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:hint="透传舵机指令"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_tranparent"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="透传舵机指令"
+            android:textSize="22sp" />
+        <EditText
+            android:id="@+id/engine_id"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLength="6"
+            android:text="1"
+            android:textSize="22sp" >
+        </EditText>
+        <EditText
+            android:id="@+id/angle"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLength="6"
+            android:text="180"
+            android:textSize="22sp" >
+        </EditText>
+        <Button
+            android:id="@+id/btn_offset"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="修正舵机"
+            android:textSize="22sp" />        
+        <EditText
+            android:id="@+id/et_pc_serial"
+            android:layout_width="500dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:hint="a5 fc"
+            android:visibility="gone"
+            android:textSize="22sp" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btn_pc_serial"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:visibility="gone"
+            android:text="发送pc串口"
+            android:textSize="22sp" />        
+    </LinearLayout>    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+	    <ImageView
+	        android:id="@+id/photo"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

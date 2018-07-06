@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cmds>
+    <musics>
+        <cmd type="my love">
+            0|/mnt/sdcard/leotech/music/My_Love.mp3
+        </cmd>
+        <cmd type="虫儿飞">
+            0|/mnt/sdcard/leotech/music/chong_er_fei.mp3
+        </cmd>
+        <cmd type="粉刷匠">
+            0|/mnt/sdcard/leotech/music/fen_shua_jiang.mp3
+        </cmd>
+        <cmd type="快乐的节日">
+            0|/mnt/sdcard/leotech/music/kuai_le_de_jie_ri.mp3
+        </cmd>
+        <cmd type="蓝精灵">
+            0|/mnt/sdcard/leotech/music/lan_jing_ling.mp3
+        </cmd>
+        <cmd type="铃儿响叮当">
+            0|/mnt/sdcard/leotech/music/ling_er_xiang_ding_dang.mp3
+        </cmd>
+        <cmd type="猫咪别淘气">
+            0|/mnt/sdcard/leotech/music/mao_mi_bie_tao_qi.mp3
+        </cmd>
+        <cmd type="泼水歌">
+            0|/mnt/sdcard/leotech/music/po_shui_ge.mp3
+        </cmd>
+        <cmd type="数鸭子">
+            0|/mnt/sdcard/leotech/music/shu_ya_zi.mp3
+        </cmd>
+        <cmd type="蜗牛与黄鹂鸟">
+            0|/mnt/sdcard/leotech/music/wo_niu_yu_huang_li.mp3
+        </cmd>
+        <cmd type="我爱洗澡">
+            0|/mnt/sdcard/leotech/music/wo_ai_xi_zao.mp3
+        </cmd>
+        <cmd type="我的好妈妈">
+            0|/mnt/sdcard/leotech/music/wo_de_hao_ma_ma.mp3
+        </cmd>
+        <cmd type="我是快乐的小蜗牛">
+            0|/mnt/sdcard/leotech/music/wo_shi_kuai_le_de_xiao_wo_niu.mp3
+        </cmd>
+        <cmd type="我愿做个好小孩儿">
+            0|/mnt/sdcard/leotech/music/wo_yuan_zuo_ge_hao_xiao_hai.mp3
+        </cmd>
+        <cmd type="小白船">
+            0|/mnt/sdcard/leotech/music/xiao_bai_chuan.mp3
+        </cmd>
+        <cmd type="小红帽">
+            0|/mnt/sdcard/leotech/music/xiao_hong_mao.mp3
+        </cmd>
+        <cmd type="小毛驴">
+            0|/mnt/sdcard/leotech/music/xiao_mao_lv.mp3
+        </cmd>
+        <cmd type="小问号">
+            0|/mnt/sdcard/leotech/music/xiao_wen_hao.mp3
+        </cmd>
+        <cmd type="小燕子">
+            0|/mnt/sdcard/leotech/music/xiao_yan_zi.mp3
+        </cmd>
+        <cmd type="种太阳">
+            0|/mnt/sdcard/leotech/music/zhong_tai_yang.mp3
+        </cmd>
+        <cmd type="捉泥鳅">
+            0|/mnt/sdcard/leotech/music/zhuo_ni_qiu.mp3
+        </cmd>
+    </musics>
+    <poetries>
+        <cmd type="登幽州台歌">
+            0|/mnt/sdcard/leotech/peotry/dengyouzhou.mp3
+        </cmd>
+        <cmd type="春晓">
+            0|/mnt/sdcard/leotech/peotry/chunxiao.mp3
+        </cmd>
+        <cmd type="枫桥夜泊">
+            0|/mnt/sdcard/leotech/peotry/fengqiaoyebo.mp3
+        </cmd>
+        <cmd type="黄鹤楼">
+            0|/mnt/sdcard/leotech/peotry/huanghelou.mp3
+        </cmd>
+        <cmd type="出塞">
+            0|/mnt/sdcard/leotech/peotry/chusai.mp3
+        </cmd>
+        <cmd type="静夜思">
+            0|/mnt/sdcard/leotech/peotry/jingyesi.mp3
+        </cmd>
+        <cmd type="送别">
+            0|/mnt/sdcard/leotech/peotry/songbie.mp3
+        </cmd>
+        <cmd type="月夜">
+            0|/mnt/sdcard/leotech/peotry/yueye.mp3
+        </cmd>
+    </poetries>
+    <storys>
+    	  <cmd type="爱挑毛病的小猩猩">
+            0|/mnt/sdcard/leotech/story/ai_tiao_mao_bing_de_xiao_xing_xing.mp3
+        </cmd>
+        <cmd type="抱住康乃馨">
+            0|/mnt/sdcard/leotech/story/bao_zhu_kang_nai_xin.mp3
+        </cmd>
+        <cmd type="阿凡提">
+            0|/mnt/sdcard/leotech/story/cong_ming_de_a_fan_ti.mp3
+        </cmd>
+        <cmd type="大鱼吃小鱼">
+            0|/mnt/sdcard/leotech/story/da_yu_chi_xiao_yu.mp3
+        </cmd>
+        <cmd type="等明天">
+            0|/mnt/sdcard/leotech/story/deng_ming_tian.mp3
+        </cmd>
+        <cmd type="会摇尾巴的狼">
+            0|/mnt/sdcard/leotech/story/hui_yao_wei_ba_de_lang.mp3
+        </cmd>
+        <cmd type="井底之蛙">
+            0|/mnt/sdcard/leotech/story/jing_di_zhi_wa.mp3
+        </cmd>
+        <cmd type="九色鹿">
+            0|/mnt/sdcard/leotech/story/jiu_se_lu.mp3
+        </cmd>
+        <cmd type="可爱的小鱼">
+            0|/mnt/sdcard/leotech/story/ke_ai_de_xiao_yu.mp3
+        </cmd>
+        <cmd type="快乐王子">
+            0|/mnt/sdcard/leotech/story/kuai_le_wang_zi.mp3
+        </cmd>
+        <cmd type="懒汉村">
+            0|/mnt/sdcard/leotech/story/lan_han_cun.mp3
+        </cmd>        
+        <cmd type="你是最棒的">
+            0|/mnt/sdcard/leotech/story/ni_shi_zui_bang_de.mp3
+        </cmd>
+        <cmd type="脾气大王">
+            0|/mnt/sdcard/leotech/story/pi_qi_da_wang.mp3
+        </cmd>
+        <cmd type="抢苹果的猴子">
+            0|/mnt/sdcard/leotech/story/qiang_ping_guo_de_hou_zi.mp3
+        </cmd>
+        <cmd type="热心肠的小狐狸">
+            0|/mnt/sdcard/leotech/story/re_xin_chang_de_xiao_hu_li.mp3
+        </cmd>
+        <cmd type="三个和尚">
+            0|/mnt/sdcard/leotech/story/san_ge_he_shang.mp3
+        </cmd>
+        <cmd type="守株待兔">
+            0|/mnt/sdcard/leotech/story/shou_zhu_dai_tu.mp3
+        </cmd>
+        <cmd type="水晶宫">
+            0|/mnt/sdcard/leotech/story/shui_jing_gong.mp3
+        </cmd>
+        <cmd type="水水历险记">
+            0|/mnt/sdcard/leotech/story/shui_shui_li_xian_ji.mp3
+        </cmd>
+        <cmd type="懂礼貌的小白兔">
+            0|/mnt/sdcard/leotech/story/donglimaodexiaobaitu.mp3
+        </cmd>
+        <cmd type="狐狸和葡萄">
+            0|/mnt/sdcard/leotech/story/huliheputao.mp3
+        </cmd>
+        <cmd type="狐狸和樵夫">
+            0|/mnt/sdcard/leotech/story/huliheqiaofu.mp3
+        </cmd>
+        <cmd type="会摇尾巴的狼">
+            0|/mnt/sdcard/leotech/story/huiyaoweibadelang.mp3
+        </cmd>
+        <cmd type="小红豆和小绿豆">
+            0|/mnt/sdcard/leotech/story/xiaohongdouhexiaolvdou.mp3
+        </cmd>
+        <cmd type="小蚂蚁避雨">
+            0|/mnt/sdcard/leotech/story/xiaomayibiyu.mp3
+        </cmd>
+        <cmd type="鹬蚌相争">
+            0|/mnt/sdcard/leotech/story/yu_bang_xiang_zheng.mp3
+        </cmd>
+        <cmd type="怪物在哪里">
+            gushi2|/mnt/sdcard/leotech/story/guaiwuzainali.mp3
+        </cmd>
+        <cmd type="最厉害的武功">
+            gushi1|/mnt/sdcard/leotech/story/zuilihaidewugong.mp3
+        </cmd>       
+    </storys>
+    <dances>
+<!--     	  <cmd type="大秧歌,大样歌,大洋个,大秧个">
+            niu|/mnt/sdcard/leotech/dance/dongbeiyg.mp3
+        </cmd>
+        <cmd type="匹诺曹">
+            zwpnc|/mnt/sdcard/leotech/dance/pinuocao.mp3
+        </cmd>
+        <cmd type="小苹果">
+            apple|/mnt/sdcard/leotech/dance/song_xpg.mp3
+        </cmd>
+        <cmd type="瓦卡,哇卡">
+            waka|/mnt/sdcard/leotech/dance/waka.mp3
+        </cmd>
+	      <cmd type="杰克逊">
+	      	  dangers|/mnt/sdcard/leotech/dance/jieqdangers.mp3
+	      </cmd>
+	      <cmd type="太极拳">
+	      	  taijiq|/mnt/sdcard/leotech/dance/taijiq.mp3
+	      </cmd>
+	      <cmd type="巴拉巴拉">
+	      	  balabala|/mnt/sdcard/leotech/dance/balabala.mp3
+	      </cmd>
+                     <cmd type="Uee,优依依">
+	      	  Uee|/mnt/sdcard/leotech/dance/uee.mp3
+	      </cmd>
+                     <cmd type="江南Style,江南">
+	      	  gansdl|/mnt/sdcard/leotech/dance/jiang_nan_style.mp3
+	      </cmd>
+                     <cmd type="追随">
+	      	  follow|/mnt/sdcard/leotech/dance/follow_him.mp3
+	      </cmd> -->
+          <cmd type="彩蝶翩翩">
+	      	  caidiepianpian|/mnt/sdcard/leotech/music/caidiepianpian.mp3
+	      	</cmd>
+          <cmd type="春天的舞蹈">
+          	lilili|/mnt/sdcard/leotech/music/lilili.mp3
+          </cmd>
+    </dances>
+</cmds>

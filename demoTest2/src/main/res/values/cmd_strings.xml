@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>  
+    <string name="cmd_yile_dance">动画</string>
+    <string name="cmd_yile_story">里奥故事,里奥的故事,你要的故事</string>
+    <string name="cmd_chatmode">聊天</string>
+    <string name="cmd_exit_chatmode">不聊天,功能模式</string>
+    <string name="cmd_callmother">打电话,打个电话</string>
+    <string name="cmd_out">退出,exit</string>    
+    <!-- english -->
+    <string name="cmd_classes">feeling,play,guess</string>
+    <!-- english -->
+    <string name="cmd_network">网络,网络啊</string>
+    <string name="cmd_network_status">网络状态</string>
+    <string name="cmd_open_data_network">移动打开</string>
+    <string name="cmd_close_data_network">移动关闭</string>
+    <string name="cmd_source_update">资源下载</string>
+    <string name="cmd_bluetoothopen">使用蓝牙耳机</string>
+    <string name="cmd_bluetoothclose">关闭蓝牙耳机</string>
+    
+    <string name="cmd_my_id">我的身份证</string>
+    <string name="cmd_my_network">我的网络</string>
+    <string name="cmd_connect">手动联网</string>
+
+    <string name="cmd_repeat">再听一遍,重复,再来一遍,再来一次,再放一遍,在天元,再添一点,再来一点</string>
+    <string name="cmd_record">录音</string>
+    <string name="cmd_fuck_you">你妈的,他妈的</string>
+    <string name="cmd_fuck_you_reponse">提倡文明语言，构建和谐社会！</string>
+    <string name="cmd_play_record">播放</string>
+    <string name="cmd_chat_sing_dance">.*((表演.*节目)|(秀.*一个)).*</string>
+    <string name="cmd_chat_sing">.*((再.*一.*歌)|(再.*一.*首)).*</string>
+    <string name="cmd_chat_dance">.*((再.*一.*舞)|(再.*一.*[支个])).*</string>
+    <string name="cmd_sing">.*唱.*歌.*</string>
+    <string name="cmd_net_music">点播,自由点播,点歌</string>
+    <string name="cmd_poetry">.*唐诗.*</string>
+    <string name="cmd_story">.*故事.*</string>
+    <string name="cmd_reduce_volume">.*((((声音)|(声)|(音)).*小)|(小.*((声音)|(声)|(音)))).*</string>
+    <string name="cmd_increase_volume">.*((((声音)|(声)|(音)).*大)|(大.*((声音)|(声)|(音)))).*</string>
+    <string name="cmd_reduce_sound_response">减小音量</string>
+    <string name="cmd_increse_sound_response">加大音量</string>
+    <string name="cmd_min_sound_response">声音到最小了!</string>
+    <string name="cmd_max_sound_response">声音到最大了!</string>
+    <string name="cmd_hello">hello,你好</string>
+    <string name="cmd_bye">再见</string>
+    <string name="cmd_introduce">(.*((你.*叫.*[名啥])|(你.*叫.*什么)|(介绍.*自己)|(你的.*名字)).*)|你是谁</string>
+    <string name="cmd_dance">.*((跳.*舞)|(舞蹈)).*</string>
+    <string name="cmd_reset">复位</string>    
+    <string name="cmd_forward">.*(([朝向往].*前)|(前.*进)).*</string>
+    <string name="cmd_forward1">.*((来.*一下)|(走.*两步)).*</string>
+    <string name="cmd_backward">.*(([朝向往].*后)|(后.*退)).*</string>
+    <string name="cmd_backward1">(.*((走.*开)|(滚.*开)).*)|滚|你滚|你走</string>
+    <string name="cmd_turn_left">.*(([朝向往].*左.*转)|(左.*转)).*</string>
+    <string name="cmd_turn_right">.*(([朝向往].*右.*转)|(右.*转)).*</string>
+    <string name="cmd_look_right">右看</string>
+    <string name="cmd_look_left">左看</string>
+    <string name="cmd_dress_right">向右看齐</string>
+    <string name="cmd_dress_left">向左看齐</string>
+    <string name="cmd_speak_english">说英语,说段英语</string>
+    <string name="cmd_speak_english_reponse">Now,i can speak english.</string>
+    <string name="cmd_speak_chinese">speak chinese</string>
+    <string name="cmd_speak_chinese_response">现在用汉语跟我聊天吧</string>
+    <string name="cmd_speak_cantonese">说粤语,说广东话</string>
+    <string name="cmd_speak_mandarin">普通话,说普通话</string>
+    <string name="cmd_english_class">英语课</string>
+    <string name="cmd_class">课程</string>
+    <string name="cmd_project">投影</string>
+    <string name="cmd_project_success_response">现在启动投影，过会再聊吧。</string>
+    <string name="cmd_project_fail_response">wifi没有开启，请开启之后再尝试</string>
+    <string name="cmd_close_projection">关闭投影</string>
+    <string name="cmd_rest">休息,坐下,蹲下</string>
+    <string name="cmd_leo_story_path">/mnt/sdcard/leotech/leotech_video/leo_story_short.mp4</string>
+    <string name="cmd_scan_once">扫描,倒苗,小苗,老苗,保苗,早苗</string>
+    <string name="cmd_scanning">看图说话</string>
+    <string name="cmd_identify_color">颜色识别</string>
+    <string name="cmd_close_camera">关闭相机</string>
+    <string name="cmd_copy_me">跟我做</string>
+    <string name="cmd_open_bluetooth">使用蓝牙耳机</string>
+    <string name="cmd_close_bluetooth">关闭蓝牙耳机</string>
+    <string name="cmd_sit_down">蹲下</string>
+    <string name="cmd_bow">鞠躬</string>
+    <string name="cmd_test">实验,试验,测试</string>
+    <string name="cmd_arm_test">胳膊</string>
+    <string name="cmd_leg_test">腿</string>
+    <string name="cmd_shut_down">别说话,闭嘴</string>
+    <string name="cmd_prompt">提示</string>
+    <string name="cmd_update">升级,更新</string>
+    <string name="cmd_version">版本</string>
+    <string name="cmd_system_version">系统版本</string>
+    <string name="cmd_help">帮助,你会什么</string>
+    <string name="cmd_offline_qalib">离线知识库</string>
+    <string name="cmd_face_reg">人脸识别</string>
+    <string name="cmd_demo_mode">演示模式,自我介绍,介绍一下自己吧,介绍一下你吧</string>
+    <string name="cmd_simple_demo_mode">简单演示</string>
+	  <string name="cmd_left_pls">.*((左.*[请来])|(左.*手)).*</string>
+	  <string name="cmd_right_pls">.*((右.*[请来])|(右.*手)).*</string>
+	  <string name="cmd_printer">打印</string>
+	  <string name="cmd_stop">停止</string>
+	  <string name="cmd_navigation">导航</string>
+	  <string name="cmd_hand">.*((握.*手)|(我.*手)).*</string>
+	  <string name="cmd_wakeup">灵犀灵犀,0707,白云白云</string>
+ 
+	  <string name="cmd_diantou">.*点.*头.*</string>  
+	  <string name="cmd_yaotou">.*摇.*头.*</string>  
+	  <string name="cmd_dazhaohu">.*(([招挥摆].*手)|(打.*招呼)).*</string>  
+	  <string name="cmd_huangbi">.*((晃.*胳膊)|(晃.*臂)|(晃.*手)).*</string>  
+	  <string name="cmd_baibi">.*((摆.*胳膊)|(摆.*臂)|(摆.*手)).*</string> 
+	  <string name="cmd_shenbi">.*((伸.*胳膊)|(伸.*臂)|(伸.*手)).*</string>  
+	  <string name="cmd_zhanbi">.*((抬.*胳膊)|(抬.*臂)|(抬.*手)|(展.*手)|(展.*臂)|(展.*胳膊)).*</string>  
+	  <string name="cmd_default">.*((抱.*胳膊)|(抱.*臂)|(抱.*手)).*</string>   
+	  <string name="cmd_resetdefault">.*放.*下.*</string>  
+	  <string name="cmd_welcome">欢迎</string>  
+	  <string name="cmd_auto_charge">.*自动.*充.*电.*</string>  
+	  
+	  <string name="cmd_licai">理财,我要理财,我想理财,办理理财,理财业务,办理理财业务,购买理财,我想买理财,我想办理理财,我想办理财业务</string>
+	  <string name="cmd_cun_qu_kuan">存款,我要存款,我想存款,存钱,我要存钱,我想存钱,取款,我要取款,我想取款,取钱,我要取钱,我想取钱,转账,我要转账,汇款,我要汇款,我想转账,我想汇款</string>
+	  <string name="cmd_non_cash">非现金业务,业务咨询</string>
+	  <string name="cmd_kai_hu_deng">开户,我要开户,我想开户,销户,我要销户,我想销户,挂失,我要挂失,我想挂失,我卡丢了,密码忘了,我的密码忘了,更改密码</string>
+	  <string name="cmd_self_help">自助服务区在哪,提款机在哪,提款机在哪里,取款机在哪,取款机在哪里,自助取款机在哪,自助取款机在哪里</string>
+	  <string name="cmd_zhaojingli">我要找经理,我要找大堂经理</string>
+	  <string name="cmd_suan_li_xi">算利息,利息计算</string>
+	  <string name="cmd_navigation_cmd">.*(([带领跟].*我.*[去到])|([去到])|(.*我.*[要带领想].*[去到])|(.*在.*((什么)|[那哪]).*)|(.*我.*[找].*)).*</string>
+
+	  
+	  
+	  <string name="cmd_jinan_bigbill">.*((大.*额.*存.*利)|(大.*额.*存)).*</string>
+	  <string name="cmd_jinan_moneymanage">.*((理财.*产品)|(有.*理财.*卖)|(有.*理财.*销售)|(理财.*卖)|(理财.*销售)).*</string>
+	  <string name="cmd_changan_suv">.*长.*什么.*</string>
+	  <string name="cmd_changan_seat">.*座位.*</string>
+	  <string name="cmd_changan_product">.*金融.*产品.*</string>
+	  <string name="cmd_changan_thank">.*谢谢.*</string>
+	  <string name="cmd_changan_leader">.*集团.*领导.*</string>
+	  <string name="cmd_changan_apply">.*申请.*贷款.*</string>
+	  <string name="cmd_changan_next">.*怎么办.*</string>
+	  <string name="cmd_changan_demo">.*开始.*</string>
+	  <string name="cmd_changan_over">.*结束.*</string>
+</resources>

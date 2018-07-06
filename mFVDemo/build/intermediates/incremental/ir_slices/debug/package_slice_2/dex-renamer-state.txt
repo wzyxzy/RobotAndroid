@@ -1,0 +1,4 @@
+#Wed May 16 17:05:37 CST 2018
+base.0=D\:\\android_project\\RobotAndroid\\mFVDemo\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+path.0=classes.dex
+renamed.0=classes.dex

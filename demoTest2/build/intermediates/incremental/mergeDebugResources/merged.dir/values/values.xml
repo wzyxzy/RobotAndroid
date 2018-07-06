@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="b_msg_chat_empty_answer">
+        <item>这个问题难住我了，看来我仍需继续努力学习</item>
+        <item>这个问题问倒我了，看来我仍需继续努力学习</item>
+        <item>看来我们老板需要花钱雇人来给我做相关培训了</item>
+        <item>我现在还小，等我长大了我就会知道更多了</item>
+        <item>活到老学到老，看来我需要不断给自己加油充电了</item>
+        <item>晚上下班回家我会加班学习一下相关知识的</item>
+        <item>不好意思，我走神了</item>
+        <item>你说什么来着？我好像没听清</item>
+    </string-array>
+    <string-array name="pronunciation_name">
+        <item>默认(女 普通，离线)</item>
+        <item>小燕(女 普通，离线)</item>
+        <item>晓峰(男 普通，离线)</item>
+        <item>楠楠(女童 普通，离线)</item>
+        <item>小里奥(男童 普通，离线)</item>
+        <item>小坤(男 河南，离线)</item>
+        <item>晓琳(女 台湾，离线)</item>
+        <item>晓美(女 粤语，离线)</item>
+        <item>小倩(女 东北，离线)</item>
+        <item>小强(男 湖南，离线)</item>
+        <item>晓蓉(女 四川，离线)</item>
+        
+        <item>小琪(女 普通，在线)</item>
+        <item>老孙(男 普通，在线)</item>
+        <item>许久(男 普通，在线)</item>
+        <item>小萍(女 普通，在线)</item>
+        <item>小筠(女 普通，在线)</item>
+        <item>小婧(女 普通，在线)</item>
+        <item>叶芳(女 普通，在线)</item>
+        <item>小梦(女 普通，在线)</item>
+        <item>小春(女 普通，在线)</item>
+        <item>子琪(女 普通，在线)</item>
+        <item>许多(男 普通，在线)</item>
+        <item>小新(男 动漫，在线)</item>
+        <item>小丸子(女 动漫，在线)</item>
+    </string-array>
+    <string-array name="pronunciation_value">
+    	<item>0</item>
+        <item>3</item>
+        <item>4</item>
+        <item>7</item>
+        <item>55</item>
+        <item>25</item>
+        <item>22</item>
+        <item>15</item>
+        <item>11</item>
+        <item>24</item>
+        <item>14</item>
+        
+        <item>xiaoqi</item>
+        <item>vils</item>
+        <item>aisjiuxu</item>
+        <item>aisxping</item>
+        <item>aisjying</item>
+        <item>aisjinger</item>
+        <item>yefang</item>
+        <item>aisxmeng</item>
+        <item>aismengchun</item>
+        <item>ziqi</item>
+        <item>aisduoxu</item>
+        <item>xiaoxin</item>
+        <item>xiaowanzi</item>
+    </string-array>
+    <attr format="reference" name="coordinatorLayoutStyle"/>
+    <color name="black">#ff000000</color>
+    <color name="controlbar_bg_color">#c9eae6</color>
+    <color name="dlg_btn_text_color">#ffffffff</color>
+    <color name="gray">#ff808080</color>
+    <color name="green">#ff00ff00</color>
+    <color name="half_translucent">#80000000</color>
+    <color name="light_blue">#ff12B7C8</color>
+    <color name="light_gray">#80808080</color>
+    <color name="log_bg">#ffe0e0e0</color>
+    <color name="log_error">#ffff0000</color>
+    <color name="log_normal">#ff3399ff</color>
+    <color name="main_bg">#e4e4e4</color>
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="recipe_desc_text">#ff000000</color>
+    <color name="recipe_name_text">#ff000000</color>
+    <color name="recipe_tag_text">#ffff8000</color>
+    <color name="red">#ffff0000</color>
+    <color name="ripple_material_light">#1f000000</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="secondary_text_default_material_light">#8a000000</color>
+    <color name="settings_tag_color">#ffff8000</color>
+    <color name="settings_value_color">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="yellow">#ffffff00</color>
+    <declare-styleable name="CoordinatorLayout"><attr format="reference" name="keylines"/><attr format="color|reference" name="statusBarBackground"/></declare-styleable>
+    <declare-styleable name="CoordinatorLayout_Layout"><attr name="android:layout_gravity"/><attr format="string" name="layout_behavior"/><attr format="reference" name="layout_anchor"/><attr format="integer" name="layout_keyline"/><attr name="layout_anchorGravity">
+            
+            <flag name="top" value="0x30"/>
+            
+            <flag name="bottom" value="0x50"/>
+            
+            <flag name="left" value="0x03"/>
+            
+            <flag name="right" value="0x05"/>
+            
+            <flag name="center_vertical" value="0x10"/>
+            
+            <flag name="fill_vertical" value="0x70"/>
+            
+            <flag name="center_horizontal" value="0x01"/>
+            
+            <flag name="fill_horizontal" value="0x07"/>
+            
+            <flag name="center" value="0x11"/>
+            
+            <flag name="fill" value="0x77"/>
+            
+            <flag name="clip_vertical" value="0x80"/>
+            
+            <flag name="clip_horizontal" value="0x08"/>
+            
+            <flag name="start" value="0x00800003"/>
+            
+            <flag name="end" value="0x00800005"/>
+        </attr><attr format="enum" name="layout_insetEdge">
+            
+            <enum name="none" value="0x0"/>
+            
+            <enum name="top" value="0x30"/>
+            
+            <enum name="bottom" value="0x50"/>
+            
+            <enum name="left" value="0x03"/>
+            
+            <enum name="right" value="0x05"/>
+            
+            <enum name="start" value="0x00800003"/>
+            
+            <enum name="end" value="0x00800005"/>
+        </attr><attr name="layout_dodgeInsetEdges">
+            
+            <flag name="none" value="0x0"/>
+            
+            <flag name="top" value="0x30"/>
+            
+            <flag name="bottom" value="0x50"/>
+            
+            <flag name="left" value="0x03"/>
+            
+            <flag name="right" value="0x05"/>
+            
+            <flag name="start" value="0x00800003"/>
+            
+            <flag name="end" value="0x00800005"/>
+            
+            <flag name="all" value="0x77"/>
+        </attr></declare-styleable>
+    <declare-styleable name="FontFamily"><attr format="string" name="fontProviderAuthority"/><attr format="string" name="fontProviderPackage"/><attr format="string" name="fontProviderQuery"/><attr format="reference" name="fontProviderCerts"/><attr name="fontProviderFetchStrategy">
+            
+            <enum name="blocking" value="0"/>
+            
+            <enum name="async" value="1"/>
+        </attr><attr format="integer" name="fontProviderFetchTimeout">
+          
+            <enum name="forever" value="-1"/>
+        </attr></declare-styleable>
+    <declare-styleable name="FontFamilyFont"><attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr><attr format="reference" name="font"/><attr format="integer" name="fontWeight"/><attr name="android:fontStyle"/><attr name="android:font"/><attr name="android:fontWeight"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
+    <dimen name="compat_button_inset_vertical_material">6dp</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
+    <dimen name="compat_button_padding_vertical_material">4dp</dimen>
+    <dimen name="compat_control_corner_material">2dp</dimen>
+    <dimen name="notification_action_icon_size">32dp</dimen>
+    <dimen name="notification_action_text_size">13sp</dimen>
+    <dimen name="notification_big_circle_margin">12dp</dimen>
+    <dimen name="notification_content_margin_start">8dp</dimen>
+    <dimen name="notification_large_icon_height">64dp</dimen>
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <dimen name="notification_main_column_padding_top">10dp</dimen>
+    <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
+    <dimen name="notification_right_icon_size">16dp</dimen>
+    <dimen name="notification_right_side_padding_top">2dp</dimen>
+    <dimen name="notification_small_icon_background_padding">3dp</dimen>
+    <dimen name="notification_small_icon_size_as_large">24dp</dimen>
+    <dimen name="notification_subtext_size">13sp</dimen>
+    <dimen name="notification_top_pad">10dp</dimen>
+    <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="tag_transition_group" type="id"/>
+    <item name="text" type="id"/>
+    <item name="text2" type="id"/>
+    <item name="title" type="id"/>
+    <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="SwitchOK">引擎切换完成</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">机器人测试</string>
+    <string name="b_cmd_exit">退出,是</string>
+    <string name="b_msg_chat_empty_answer_default">这个问题我不会，只能和你随便对。</string>
+    <string name="b_msg_exitpoetry">退出唐诗</string>
+    <string name="b_msg_exitsong">退出唱歌</string>
+    <string name="b_msg_exitstory">退出讲故事</string>
+    <string name="b_msg_prompt">是否退出</string>
+    <string name="b_msg_song_start">进入唱歌，优美歌曲即将为您播放</string>
+    <string name="b_msg_story_start">故事会开始了</string>
+    <string name="cmd_arm_test">胳膊</string>
+    <string name="cmd_auto_charge">.*自动.*充.*电.*</string>
+    <string name="cmd_backward">.*(([朝向往].*后)|(后.*退)).*</string>
+    <string name="cmd_backward1">(.*((走.*开)|(滚.*开)).*)|滚|你滚|你走</string>
+    <string name="cmd_baibi">.*((摆.*胳膊)|(摆.*臂)|(摆.*手)).*</string>
+    <string name="cmd_bluetoothclose">关闭蓝牙耳机</string>
+    <string name="cmd_bluetoothopen">使用蓝牙耳机</string>
+    <string name="cmd_bow">鞠躬</string>
+    <string name="cmd_bye">再见</string>
+    <string name="cmd_callmother">打电话,打个电话</string>
+    <string name="cmd_changan_apply">.*申请.*贷款.*</string>
+    <string name="cmd_changan_demo">.*开始.*</string>
+    <string name="cmd_changan_leader">.*集团.*领导.*</string>
+    <string name="cmd_changan_next">.*怎么办.*</string>
+    <string name="cmd_changan_over">.*结束.*</string>
+    <string name="cmd_changan_product">.*金融.*产品.*</string>
+    <string name="cmd_changan_seat">.*座位.*</string>
+    <string name="cmd_changan_suv">.*长.*什么.*</string>
+    <string name="cmd_changan_thank">.*谢谢.*</string>
+    <string name="cmd_chat_dance">.*((再.*一.*舞)|(再.*一.*[支个])).*</string>
+    <string name="cmd_chat_sing">.*((再.*一.*歌)|(再.*一.*首)).*</string>
+    <string name="cmd_chat_sing_dance">.*((表演.*节目)|(秀.*一个)).*</string>
+    <string name="cmd_chatmode">聊天</string>
+    <string name="cmd_class">课程</string>
+    <string name="cmd_classes">feeling,play,guess</string>
+    <string name="cmd_close_bluetooth">关闭蓝牙耳机</string>
+    <string name="cmd_close_camera">关闭相机</string>
+    <string name="cmd_close_data_network">移动关闭</string>
+    <string name="cmd_close_projection">关闭投影</string>
+    <string name="cmd_connect">手动联网</string>
+    <string name="cmd_copy_me">跟我做</string>
+    <string name="cmd_cun_qu_kuan">存款,我要存款,我想存款,存钱,我要存钱,我想存钱,取款,我要取款,我想取款,取钱,我要取钱,我想取钱,转账,我要转账,汇款,我要汇款,我想转账,我想汇款</string>
+    <string name="cmd_dance">.*((跳.*舞)|(舞蹈)).*</string>
+    <string name="cmd_dazhaohu">.*(([招挥摆].*手)|(打.*招呼)).*</string>
+    <string name="cmd_default">.*((抱.*胳膊)|(抱.*臂)|(抱.*手)).*</string>
+    <string name="cmd_demo_mode">演示模式,自我介绍,介绍一下自己吧,介绍一下你吧</string>
+    <string name="cmd_diantou">.*点.*头.*</string>
+    <string name="cmd_dress_left">向左看齐</string>
+    <string name="cmd_dress_right">向右看齐</string>
+    <string name="cmd_english_class">英语课</string>
+    <string name="cmd_exit_chatmode">不聊天,功能模式</string>
+    <string name="cmd_face_reg">人脸识别</string>
+    <string name="cmd_forward">.*(([朝向往].*前)|(前.*进)).*</string>
+    <string name="cmd_forward1">.*((来.*一下)|(走.*两步)).*</string>
+    <string name="cmd_fuck_you">你妈的,他妈的</string>
+    <string name="cmd_fuck_you_reponse">提倡文明语言，构建和谐社会！</string>
+    <string name="cmd_hand">.*((握.*手)|(我.*手)).*</string>
+    <string name="cmd_hello">hello,你好</string>
+    <string name="cmd_help">帮助,你会什么</string>
+    <string name="cmd_huangbi">.*((晃.*胳膊)|(晃.*臂)|(晃.*手)).*</string>
+    <string name="cmd_identify_color">颜色识别</string>
+    <string name="cmd_increase_volume">.*((((声音)|(声)|(音)).*大)|(大.*((声音)|(声)|(音)))).*</string>
+    <string name="cmd_increse_sound_response">加大音量</string>
+    <string name="cmd_introduce">(.*((你.*叫.*[名啥])|(你.*叫.*什么)|(介绍.*自己)|(你的.*名字)).*)|你是谁</string>
+    <string name="cmd_jinan_bigbill">.*((大.*额.*存.*利)|(大.*额.*存)).*</string>
+    <string name="cmd_jinan_moneymanage">.*((理财.*产品)|(有.*理财.*卖)|(有.*理财.*销售)|(理财.*卖)|(理财.*销售)).*</string>
+    <string name="cmd_kai_hu_deng">开户,我要开户,我想开户,销户,我要销户,我想销户,挂失,我要挂失,我想挂失,我卡丢了,密码忘了,我的密码忘了,更改密码</string>
+    <string name="cmd_left_pls">.*((左.*[请来])|(左.*手)).*</string>
+    <string name="cmd_leg_test">腿</string>
+    <string name="cmd_leo_story_path">/mnt/sdcard/leotech/leotech_video/leo_story_short.mp4</string>
+    <string name="cmd_licai">理财,我要理财,我想理财,办理理财,理财业务,办理理财业务,购买理财,我想买理财,我想办理理财,我想办理财业务</string>
+    <string name="cmd_look_left">左看</string>
+    <string name="cmd_look_right">右看</string>
+    <string name="cmd_max_sound_response">声音到最大了!</string>
+    <string name="cmd_min_sound_response">声音到最小了!</string>
+    <string name="cmd_my_id">我的身份证</string>
+    <string name="cmd_my_network">我的网络</string>
+    <string name="cmd_navigation">导航</string>
+    <string name="cmd_navigation_cmd">.*(([带领跟].*我.*[去到])|([去到])|(.*我.*[要带领想].*[去到])|(.*在.*((什么)|[那哪]).*)|(.*我.*[找].*)).*</string>
+    <string name="cmd_net_music">点播,自由点播,点歌</string>
+    <string name="cmd_network">网络,网络啊</string>
+    <string name="cmd_network_status">网络状态</string>
+    <string name="cmd_non_cash">非现金业务,业务咨询</string>
+    <string name="cmd_offline_qalib">离线知识库</string>
+    <string name="cmd_open_bluetooth">使用蓝牙耳机</string>
+    <string name="cmd_open_data_network">移动打开</string>
+    <string name="cmd_out">退出,exit</string>
+    <string name="cmd_play_record">播放</string>
+    <string name="cmd_poetry">.*唐诗.*</string>
+    <string name="cmd_printer">打印</string>
+    <string name="cmd_project">投影</string>
+    <string name="cmd_project_fail_response">wifi没有开启，请开启之后再尝试</string>
+    <string name="cmd_project_success_response">现在启动投影，过会再聊吧。</string>
+    <string name="cmd_prompt">提示</string>
+    <string name="cmd_record">录音</string>
+    <string name="cmd_reduce_sound_response">减小音量</string>
+    <string name="cmd_reduce_volume">.*((((声音)|(声)|(音)).*小)|(小.*((声音)|(声)|(音)))).*</string>
+    <string name="cmd_repeat">再听一遍,重复,再来一遍,再来一次,再放一遍,在天元,再添一点,再来一点</string>
+    <string name="cmd_reset">复位</string>
+    <string name="cmd_resetdefault">.*放.*下.*</string>
+    <string name="cmd_rest">休息,坐下,蹲下</string>
+    <string name="cmd_right_pls">.*((右.*[请来])|(右.*手)).*</string>
+    <string name="cmd_scan_once">扫描,倒苗,小苗,老苗,保苗,早苗</string>
+    <string name="cmd_scanning">看图说话</string>
+    <string name="cmd_self_help">自助服务区在哪,提款机在哪,提款机在哪里,取款机在哪,取款机在哪里,自助取款机在哪,自助取款机在哪里</string>
+    <string name="cmd_shenbi">.*((伸.*胳膊)|(伸.*臂)|(伸.*手)).*</string>
+    <string name="cmd_shut_down">别说话,闭嘴</string>
+    <string name="cmd_simple_demo_mode">简单演示</string>
+    <string name="cmd_sing">.*唱.*歌.*</string>
+    <string name="cmd_sit_down">蹲下</string>
+    <string name="cmd_source_update">资源下载</string>
+    <string name="cmd_speak_cantonese">说粤语,说广东话</string>
+    <string name="cmd_speak_chinese">speak chinese</string>
+    <string name="cmd_speak_chinese_response">现在用汉语跟我聊天吧</string>
+    <string name="cmd_speak_english">说英语,说段英语</string>
+    <string name="cmd_speak_english_reponse">Now,i can speak english.</string>
+    <string name="cmd_speak_mandarin">普通话,说普通话</string>
+    <string name="cmd_stop">停止</string>
+    <string name="cmd_story">.*故事.*</string>
+    <string name="cmd_suan_li_xi">算利息,利息计算</string>
+    <string name="cmd_system_version">系统版本</string>
+    <string name="cmd_test">实验,试验,测试</string>
+    <string name="cmd_turn_left">.*(([朝向往].*左.*转)|(左.*转)).*</string>
+    <string name="cmd_turn_right">.*(([朝向往].*右.*转)|(右.*转)).*</string>
+    <string name="cmd_update">升级,更新</string>
+    <string name="cmd_version">版本</string>
+    <string name="cmd_wakeup">灵犀灵犀,0707,白云白云</string>
+    <string name="cmd_welcome">欢迎</string>
+    <string name="cmd_yaotou">.*摇.*头.*</string>
+    <string name="cmd_yile_dance">动画</string>
+    <string name="cmd_yile_story">里奥故事,里奥的故事,你要的故事</string>
+    <string name="cmd_zhanbi">.*((抬.*胳膊)|(抬.*臂)|(抬.*手)|(展.*手)|(展.*臂)|(展.*胳膊)).*</string>
+    <string name="cmd_zhaojingli">我要找经理,我要找大堂经理</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="private_app_id">e06741f3602446cdb2f4f14edfca9eab</string>
+    <string name="start_demo_mode">开启演示模式</string>
+    <string name="start_face_reg">开启人脸识别</string>
+    <string name="start_simple_demo_mode">开启简单演示</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_dialog_setup_pronunciation">设置发音人</string>
+    <string name="word_exitchatmode_resp">好的，现在不聊天了，只接收指令。</string>
+    <string name="word_hello">woshou|来，握握手</string>
+    <string name="word_net_error">网络有问题，请设置网络!</string>
+    <string name="word_nihao">你好!</string>
+    <string name="word_reset">default|立正!看我站的直不直!</string>
+    <string name="word_turn_left">turnL|瞧瞧,我漂亮的左转!</string>
+    <string name="word_turn_right">turnR|看我来个华丽的右转!</string>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
+    <style name="TextAppearance.Compat.Notification.Info">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
+    <style name="TextAppearance.Compat.Notification.Time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name="statusBarBackground">#000000</item>
+    </style>
+</resources>

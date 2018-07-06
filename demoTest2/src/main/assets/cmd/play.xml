@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+<play>/mnt/sdcard/leotech/lesson_feel/start_play.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/game_music.mp3</play>
+<play>/mnt/sdcard/leotech/lesson_feel/play1.mp3</play>
+
+<ask>
+	<tip>/mnt/sdcard/leotech/lesson_feel/play2.mp3</tip>
+	<answer name="angry">angry|/mnt/sdcard/leotech/lesson_feel/angry_music.mp3</answer>
+	<answer name="bored,board,bird,抱得">/mnt/sdcard/leotech/lesson_feel/bored_music.mp3</answer>
+	<answer name="scared,scare,here,盖饿的,盖尔,司盖尔">scared|/mnt/sdcard/leotech/lesson_feel/scared_music.mp3</answer>
+	<answer name="happy">happy|/mnt/sdcard/leotech/lesson_feel/happy_music.mp3</answer>
+	<answer name="sad,sam">sad|/mnt/sdcard/leotech/lesson_feel/sad_music.mp3</answer>
+	<exit name="over,exit,no,结束,退出">/mnt/sdcard/leotech/lesson_feel/over.mp3</exit>
+	<wrong>/mnt/sdcard/leotech/lesson_feel/angry_or_happy.mp3</wrong>
+	<wrong>/mnt/sdcard/leotech/lesson_feel/bored_or_scared.mp3</wrong>
+	<wrong>/mnt/sdcard/leotech/lesson_feel/happy_or_sad.mp3</wrong>
+	<wrong>/mnt/sdcard/leotech/lesson_feel/scared_or_angry.mp3</wrong>	
+</ask>
+<play>/mnt/sdcard/leotech/lesson_feel/bye.mp3</play>
+
